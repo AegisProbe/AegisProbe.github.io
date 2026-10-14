@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de informe | AegisProbe</title>
+    <link rel="stylesheet" href="css/estilo-formulario.css">
+    <link rel="stylesheet" href="css/usuarios.css">
+</head>
+<body id="pagina-informe">
+    <header class="header" id="cabecera">
+        <a href="index.html" class="brand" id="logo-principal" aria-label="Volver al inicio de AegisProbe">
+            <div class="brand-logo" id="imagen-logo"></div>
+            <span class="brand-name" id="nombre-marca">
+                <span class="aegis">Aegis</span><span class="probe">Probe</span>
+            </span>
+        </a>
+
+        <nav class="nav" id="menu-navegacion">
+            <a href="index.html#inicio" id="link-inicio">Inicio</a>
+            <a href="index.html#servicios" id="link-servicios">Servicios</a>
+            <a href="index.html#metodologia" id="link-metodologia">Metodología</a>
+            <a href="index.html#nosotros" id="link-nosotros">Nosotros</a>
+            <a href="index.html#contacto" id="link-contacto">Contacto</a>
+            <a href="index.html#solicitar-auditoria" id="link-solicitar-auditoria">Solicitar auditoría</a>
+            <a href="login.html" class="nav-usuario" id="link-login">Iniciar sesión</a>
+            <a href="registro.html" class="nav-usuario nav-registro" id="link-registro">Registrarse</a>
+        </nav>
+    </header>
+
+    <section class="page-hero" id="hero-informe">
+        <h1>Ejemplo de informe técnico</h1>
+        <p>Modelo visual del reporte que AegisProbe entregaría después de una auditoría autorizada de seguridad.</p>
+    </section>
+
+    <main class="report-demo-section">
+        <article class="report-demo-card">
+            <header class="report-demo-header">
+                <span class="section-label">INFORME CONFIDENCIAL DE MUESTRA</span>
+                <h2>Auditoría de seguridad web y API</h2>
+                <p>Este contenido es un ejemplo ficticio para mostrar la estructura del entregable. No representa datos de un cliente real.</p>
+            </header>
+
+            <section class="report-meta-grid" aria-label="Datos generales del informe">
+                <div class="report-meta-item">
+                    <span>Cliente</span>
+                    <strong>Empresa Demo S.A.C.</strong>
+                </div>
+                <div class="report-meta-item">
+                    <span>Tipo de evaluación</span>
+                    <strong>Grey Box</strong>
+                </div>
+                <div class="report-meta-item">
+                    <span>Periodo</span>
+                    <strong>05 al 09 de octubre de 2026</strong>
+                </div>
+                <div class="report-meta-item">
+                    <span>Estado</span>
+                    <strong>Finalizado</strong>
+                </div>
+            </section>
+
+            <section class="report-block">
+                <h3>1. Resumen ejecutivo</h3>
+                <p>Durante la evaluación se revisaron los módulos de autenticación, administración, API pública y configuración de cabeceras de seguridad. Se identificaron riesgos que podrían afectar la confidencialidad de información sensible y la integridad de operaciones internas.</p>
+                <div class="report-summary-grid">
+                    <div class="report-risk-card">
+                        <span>Críticas</span>
+                        <strong>1</strong>
+                        <p>Requieren atención inmediata.</p>
+                    </div>
+                    <div class="report-risk-card">
+                        <span>Altas</span>
+                        <strong>3</strong>
+                        <p>Impacto relevante si son explotadas.</p>
+                    </div>
+                    <div class="report-risk-card">
+                        <span>Medias</span>
+                        <strong>5</strong>
+                        <p>Deben corregirse en el corto plazo.</p>
+                    </div>
+                    <div class="report-risk-card">
+                        <span>Bajas</span>
+                        <strong>4</strong>
+                        <p>Mejoras recomendadas.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="report-block">
+                <h3>2. Alcance evaluado</h3>
+                <p>El alcance definido por el cliente incluyó una aplicación web pública, un panel administrativo y una API REST de pruebas. La revisión se realizó con credenciales de usuario estándar y acceso parcial a documentación funcional.</p>
+                <ul>
+                    <li>Aplicación web principal: autenticación, sesión, formularios y roles.</li>
+                    <li>API REST: autorización, validación de entradas y exposición de datos.</li>
+                    <li>Configuración de seguridad: cabeceras HTTP, errores y controles básicos.</li>
+                </ul>
+            </section>
+
+            <section class="report-block">
+                <h3>3. Hallazgo destacado</h3>
+                <div class="finding-grid">
+                    <div class="finding-box">
+                        <span class="severity-badge">SEVERIDAD ALTA</span>
+                        <h4>Control de acceso insuficiente en panel administrativo</h4>
+                        <p>Se detectó que un usuario con privilegios limitados podía consultar una ruta administrativa modificando manualmente el identificador de recurso en la URL.</p>
+                    </div>
+                    <div class="finding-box">
+                        <h4>Impacto potencial</h4>
+                        <p>Un atacante autenticado podría visualizar información no autorizada, alterar registros internos o recopilar datos para ataques posteriores.</p>
+                        <h4>Recomendación</h4>
+                        <p>Validar permisos en el servidor para cada recurso, aplicar controles por rol y registrar intentos de acceso no autorizado.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="report-block">
+                <h3>4. Plan de corrección sugerido</h3>
+                <table class="report-table">
+                    <thead>
+                        <tr>
+                            <th>Prioridad</th>
+                            <th>Acción recomendada</th>
+                            <th>Responsable sugerido</th>
+                            <th>Plazo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Alta</td>
+                            <td>Corregir validación de permisos en rutas administrativas.</td>
+                            <td>Equipo Backend</td>
+                            <td>1 a 3 días</td>
+                        </tr>
+                        <tr>
+                            <td>Media</td>
+                            <td>Agregar pruebas automatizadas de autorización por rol.</td>
+                            <td>QA / Desarrollo</td>
+                            <td>1 semana</td>
+                        </tr>
+                        <tr>
+                            <td>Baja</td>
+                            <td>Mejorar mensajes de error y documentación interna.</td>
+                            <td>TI / Seguridad</td>
+                            <td>2 semanas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="report-block">
+                <h3>5. Conclusión</h3>
+                <p>El entorno evaluado presenta una base funcional correcta, pero requiere reforzar controles de autorización, validación de entradas y seguimiento posterior mediante re-test. AegisProbe recomienda corregir primero los hallazgos críticos y altos, luego verificar su mitigación.</p>
+                <div class="report-actions">
+                    <a href="index.html#informe" class="btn btn-secondary">Volver a la página principal</a>
+                    <a href="index.html#solicitar-auditoria" class="btn btn-primary">Solicitar auditoría</a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer id="pie-pagina">
+        <div class="footer-brand" id="marca-footer">
+            <div class="footer-logo" id="logo-footer"></div>
+            <strong><span>Aegis</span>Probe</strong>
+        </div>
+        <p id="texto-footer">© 2026 AegisProbe · Pentesting & Offensive Security</p>
+    </footer>
+</body>
+</html>
