@@ -1100,3 +1100,578 @@ footer p {
     }
 
 }
+
+/* ================================
+   AJUSTES DE ESPACIADO Y NUEVOS BLOQUES
+================================ */
+
+.compact-section {
+    padding-top: 55px;
+    padding-bottom: 55px;
+}
+
+#estadisticas {
+    padding-top: 50px;
+}
+
+#estadisticas .section-description,
+#testimonios .section-description,
+#tipos-evaluacion .section-description,
+#certificaciones .section-description {
+    margin-bottom: 32px;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 175px;
+}
+
+.stat-card p {
+    margin-bottom: 8px;
+}
+
+.stat-card span {
+    display: block;
+    color: #5B6678;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+/* Carrusel de reseñas */
+.testimonials-carousel {
+    position: relative;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 58px 42px;
+}
+
+.testimonials-viewport {
+    overflow: hidden;
+}
+
+.testimonials-track {
+    display: flex;
+    gap: 25px;
+    transition: transform 0.45s ease;
+    will-change: transform;
+}
+
+.testimonials-track .testimonial-card {
+    flex: 0 0 calc((100% - 50px) / 3);
+    min-height: 235px;
+}
+
+.testimonial-card span {
+    display: block;
+    color: #5B6678;
+    font-size: 13px;
+    line-height: 1.45;
+    margin-top: 6px;
+}
+
+.carousel-btn {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #DCE6F0;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    color: #0077FF;
+    font-size: 30px;
+    line-height: 1;
+    cursor: pointer;
+    position: absolute;
+    top: 42%;
+    transform: translateY(-50%);
+    box-shadow: 0 8px 22px rgba(7, 26, 51, 0.08);
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.carousel-btn:hover {
+    background: linear-gradient(135deg, #0077FF, #00C8FF);
+    color: #FFFFFF;
+    border-color: transparent;
+}
+
+.carousel-prev {
+    left: 0;
+}
+
+.carousel-next {
+    right: 0;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+    margin-top: 24px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border: 0;
+    border-radius: 50%;
+    background-color: #C6D3E1;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.carousel-dot.is-active {
+    width: 28px;
+    border-radius: 20px;
+    background-color: #0077FF;
+}
+
+/* Tipos de evaluación ampliados */
+.comparison-card {
+    box-shadow: 0 8px 25px rgba(7, 26, 51, 0.06);
+    transition: 0.3s;
+}
+
+.comparison-card:hover {
+    transform: translateY(-5px);
+    border-color: #0077FF;
+}
+
+.comparison-card ul {
+    margin-top: 14px;
+    padding-left: 18px;
+    color: #5B6678;
+    font-size: 14px;
+}
+
+.comparison-card li {
+    margin-bottom: 8px;
+}
+
+/* Informe */
+.report-box {
+    padding: 48px 35px;
+    box-shadow: 0 12px 35px rgba(7, 26, 51, 0.06);
+}
+
+.report-box .section-label {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.report-box h3 {
+    font-size: 26px;
+}
+
+/* Certificaciones como enlaces */
+.cert-badge {
+    transition: 0.3s;
+}
+
+.cert-badge:hover {
+    background: linear-gradient(135deg, #0077FF, #00C8FF);
+    color: #FFFFFF;
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 119, 255, 0.22);
+}
+
+/* Página de informe de ejemplo */
+.report-demo-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 55px 25px;
+}
+
+.report-demo-card {
+    background-color: #FFFFFF;
+    border: 1px solid #DCE6F0;
+    border-radius: 22px;
+    box-shadow: 0 15px 45px rgba(7, 26, 51, 0.08);
+    overflow: hidden;
+}
+
+.report-demo-header {
+    background: linear-gradient(135deg, #071A33, #0D2B4D);
+    color: #FFFFFF;
+    padding: 34px;
+}
+
+.report-demo-header h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.report-demo-header p {
+    color: #C6D3E1;
+}
+
+.report-meta-grid,
+.report-summary-grid,
+.finding-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.report-meta-grid {
+    padding: 28px 34px;
+    border-bottom: 1px solid #DCE6F0;
+}
+
+.report-meta-item {
+    background-color: #F8FAFD;
+    border: 1px solid #DCE6F0;
+    border-radius: 14px;
+    padding: 16px;
+}
+
+.report-meta-item span,
+.report-risk-card span {
+    display: block;
+    color: #5B6678;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.report-meta-item strong {
+    color: #071A33;
+}
+
+.report-block {
+    padding: 34px;
+    border-bottom: 1px solid #DCE6F0;
+}
+
+.report-block:last-child {
+    border-bottom: 0;
+}
+
+.report-block h3 {
+    color: #071A33;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.report-block p,
+.report-block li {
+    color: #5B6678;
+}
+
+.report-block ul {
+    padding-left: 20px;
+    margin-top: 12px;
+}
+
+.report-summary-grid {
+    margin-top: 20px;
+}
+
+.report-risk-card {
+    border: 1px solid #DCE6F0;
+    border-radius: 16px;
+    padding: 18px;
+    background-color: #F8FAFD;
+}
+
+.report-risk-card strong {
+    display: block;
+    font-size: 32px;
+    color: #0077FF;
+}
+
+.finding-grid {
+    grid-template-columns: 1.1fr 1fr;
+    margin-top: 18px;
+}
+
+.finding-box {
+    background-color: #F8FAFD;
+    border: 1px solid #DCE6F0;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.finding-box h4 {
+    color: #071A33;
+    margin-bottom: 8px;
+}
+
+.severity-badge {
+    display: inline-block;
+    background-color: #FEF3C7;
+    color: #92400E;
+    padding: 7px 11px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.report-table th,
+.report-table td {
+    border: 1px solid #DCE6F0;
+    padding: 13px 15px;
+    text-align: left;
+    color: #5B6678;
+}
+
+.report-table th {
+    background-color: #EAF5FF;
+    color: #071A33;
+}
+
+.report-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+@media (max-width: 950px) {
+    .testimonials-track .testimonial-card {
+        flex-basis: calc((100% - 25px) / 2);
+    }
+
+    .report-meta-grid,
+    .report-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .compact-section {
+        padding-top: 42px;
+        padding-bottom: 42px;
+    }
+
+    .testimonials-carousel {
+        padding: 0 0 38px;
+    }
+
+    .testimonials-track .testimonial-card {
+        flex-basis: 100%;
+    }
+
+    .carousel-btn {
+        top: auto;
+        bottom: 0;
+        transform: none;
+    }
+
+    .carousel-prev {
+        left: calc(50% - 58px);
+    }
+
+    .carousel-next {
+        right: calc(50% - 58px);
+    }
+
+    .carousel-dots {
+        margin-top: 18px;
+        margin-bottom: 50px;
+    }
+
+    .report-meta-grid,
+    .report-summary-grid,
+    .finding-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .report-demo-header,
+    .report-meta-grid,
+    .report-block {
+        padding: 24px;
+    }
+
+    .report-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
+
+/* ================================
+   PULIDO VISUAL: ALINEACIÓN FINAL
+================================ */
+
+.section-title {
+    line-height: 1.15;
+}
+
+.compact-section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+}
+
+#estadisticas,
+#testimonios,
+#tipos-evaluacion,
+#informe,
+#certificaciones {
+    scroll-margin-top: 110px;
+}
+
+#estadisticas .section-title,
+#testimonios .section-title,
+#tipos-evaluacion .section-title,
+#certificaciones .section-title {
+    margin-bottom: 12px;
+}
+
+.stats,
+.comparison,
+.services-grid,
+.values-grid,
+.standards-grid,
+.team-grid {
+    align-items: stretch;
+}
+
+.stats {
+    grid-auto-rows: 1fr;
+}
+
+.stat-card,
+.comparison-card,
+.service-card,
+.value-card,
+.standard-card,
+.team-card {
+    height: 100%;
+}
+
+.stat-card h3 {
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.stat-card p,
+.stat-card span {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.testimonials-carousel {
+    padding-left: 64px;
+    padding-right: 64px;
+}
+
+.testimonials-viewport {
+    padding: 6px 2px 18px;
+}
+
+.testimonials-track {
+    align-items: stretch;
+}
+
+.testimonials-track .testimonial-card {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card .stars {
+    line-height: 1;
+}
+
+.testimonial-card p {
+    flex: 1;
+}
+
+.testimonial-card strong {
+    margin-top: auto;
+    display: block;
+}
+
+.testimonial-card span {
+    min-height: 38px;
+}
+
+.carousel-btn {
+    top: 45%;
+}
+
+.carousel-prev {
+    left: 8px;
+}
+
+.carousel-next {
+    right: 8px;
+}
+
+.carousel-dot {
+    flex: 0 0 auto;
+}
+
+.comparison-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.comparison-card p {
+    margin-bottom: 0;
+}
+
+.comparison-card ul {
+    margin-bottom: 0;
+}
+
+.certifications {
+    align-items: center;
+}
+
+.cert-badge {
+    min-width: 96px;
+    min-height: 52px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (max-width: 950px) {
+    .testimonials-carousel {
+        padding-left: 54px;
+        padding-right: 54px;
+    }
+
+    .testimonials-track .testimonial-card {
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 650px) {
+    .compact-section {
+        padding-top: 38px;
+        padding-bottom: 38px;
+    }
+
+    .testimonials-carousel {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .testimonials-track .testimonial-card {
+        min-height: 245px;
+    }
+
+    .carousel-btn {
+        top: auto;
+    }
+
+    .cert-badge {
+        width: min(220px, 100%);
+    }
+}
