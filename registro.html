@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página de demostración de registro de usuarios de AegisProbe.">
+    <meta name="description" content="Página funcional de registro de usuarios de AegisProbe.">
     <title>Registro de usuarios | AegisProbe</title>
     <link rel="stylesheet" href="css/usuarios.css">
     <script src="index.js" defer></script>
+    <script src="usuarios.js" defer></script>
 </head>
 <body class="usuarios-page" id="pagina-registro">
     <header class="usuarios-header">
         <a href="index.html" class="usuarios-brand" aria-label="AegisProbe, volver al inicio">
-            <span class="usuarios-symbol" aria-hidden="true">A</span>
+            <span class="usuarios-symbol" aria-hidden="true">AP</span>
             <span>Aegis<span class="usuarios-accent">Probe</span></span>
         </a>
+
         <nav class="usuarios-nav" aria-label="Navegación de usuarios">
             <a href="index.html">Inicio</a>
             <a href="login.html">Iniciar sesión</a>
@@ -26,50 +28,69 @@
             <section class="usuarios-intro" aria-labelledby="titulo-intro">
                 <span class="usuarios-label">PENTESTING &amp; OFFENSIVE SECURITY</span>
                 <h1 id="titulo-intro">El primer paso<br><span>hacia tu seguridad.</span></h1>
-                <p>Descubre la propuesta de registro para la comunidad de AegisProbe.</p>
+                <p>Crea una cuenta de demostración para probar el acceso de usuarios de AegisProbe.</p>
+
                 <div class="usuarios-visual" aria-hidden="true">
                     <span class="usuarios-orbit"></span>
                     <span class="usuarios-shield">AP</span>
                     <span class="usuarios-dot"></span>
                 </div>
+
                 <p class="usuarios-caption">AegisProbe · Seguridad ofensiva</p>
             </section>
 
             <section class="usuarios-card" aria-labelledby="titulo-registro">
-                <span class="usuarios-badge">Vista de demostración</span>
+                <span class="usuarios-badge">Registro de usuarios</span>
                 <h2 id="titulo-registro">Crea tu cuenta</h2>
-                <p class="usuarios-subtitle">Forma parte de AegisProbe.</p>
+                <p class="usuarios-subtitle">Completa los datos para registrar una cuenta de prueba.</p>
 
-                <p class="usuarios-notice" id="aviso-registro">Esta página es una maqueta. Los campos muestran ejemplos, no se pueden editar y no se recopilan datos.</p>
+                <p class="usuarios-notice" id="aviso-registro">
+                    Esta interfaz funciona como demostración local. La cuenta se guarda solo en este navegador.
+                </p>
 
-                <!-- Placeholders de muestra. No se crea ni se guarda una cuenta. -->
-                <div class="usuarios-fields" role="group" aria-label="Ejemplo de registro" aria-describedby="aviso-registro">
+                <form class="usuarios-fields" id="form-registro" aria-describedby="aviso-registro" novalidate>
                     <div class="usuarios-field">
                         <label for="registro-nombre">Nombre completo</label>
-                        <input type="text" id="registro-nombre" placeholder="Usuario de ejemplo" readonly autocomplete="off">
+                        <input type="text" id="registro-nombre" name="nombre" placeholder="Escribe tu nombre" autocomplete="name" required>
                     </div>
+
                     <div class="usuarios-field">
                         <label for="registro-correo">Correo electrónico</label>
-                        <input type="email" id="registro-correo" placeholder="usuario@ejemplo.com" readonly autocomplete="off">
+                        <input type="email" id="registro-correo" name="correo" placeholder="usuario@ejemplo.com" autocomplete="email" required>
                     </div>
+
                     <div class="usuarios-field">
                         <label for="registro-clave">Contraseña</label>
-                        <input type="password" id="registro-clave" placeholder="••••••••" readonly autocomplete="off">
+                        <input type="password" id="registro-clave" name="clave" placeholder="Mínimo 6 caracteres" autocomplete="new-password" minlength="6" required>
                     </div>
+
                     <div class="usuarios-field">
                         <label for="registro-confirmar">Confirmar contraseña</label>
-                        <input type="password" id="registro-confirmar" placeholder="••••••••" readonly autocomplete="off">
+                        <input type="password" id="registro-confirmar" name="confirmar" placeholder="Repite tu contraseña" autocomplete="new-password" minlength="6" required>
                     </div>
-                    <button type="button" class="usuarios-button" id="boton-registro-demo" aria-describedby="aviso-registro">Crear cuenta <span aria-hidden="true">→</span></button>
-                </div>
+
+                    <button type="submit" class="usuarios-button" id="boton-registro-demo">
+                        Crear cuenta <span aria-hidden="true">→</span>
+                    </button>
+                </form>
 
                 <p class="usuarios-feedback" id="mensaje-registro" role="status" aria-live="polite" tabindex="-1" hidden></p>
-                <noscript><p class="usuarios-notice">El botón es una demostración visual. No crea una cuenta ni envía datos.</p></noscript>
+
                 <p class="usuarios-switch">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a></p>
                 <a href="index.html" class="usuarios-back">← Volver a la página principal</a>
             </section>
         </div>
     </main>
+
+    <div class="usuarios-modal" id="modal-registro-exitoso" role="dialog" aria-modal="true" aria-labelledby="modal-registro-titulo" hidden>
+        <div class="usuarios-modal-card">
+            <button class="usuarios-modal-close" type="button" data-modal-close aria-label="Cerrar mensaje">×</button>
+            <div class="usuarios-modal-icon" aria-hidden="true">✓</div>
+            <h3 id="modal-registro-titulo">Registro exitoso</h3>
+            <p>Tu cuenta fue creada correctamente. Ahora puedes iniciar sesión con tu correo y contraseña.</p>
+            <a href="login.html" class="usuarios-modal-action">Ir a iniciar sesión</a>
+        </div>
+    </div>
 
     <footer class="usuarios-footer">© 2026 AegisProbe · Pentesting &amp; Offensive Security</footer>
 </body>
