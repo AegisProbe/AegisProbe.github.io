@@ -1,87 +1,75 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página funcional de inicio de sesión de AegisProbe.">
-    <title>Iniciar sesión | AegisProbe</title>
-    <link rel="stylesheet" href="css/usuarios.css">
-    <script src="index.js" defer></script>
-    <script src="usuarios.js" defer></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Página funcional de inicio de sesión de AegisProbe." name="description"/>
+<title>Iniciar sesión | AegisProbe</title>
+<link href="css/usuarios.css" rel="stylesheet"/>
+
+<script defer="" src="usuarios.js"></script>
 </head>
 <body class="usuarios-page" id="pagina-login">
-    <header class="usuarios-header">
-        <a href="index.html" class="usuarios-brand" aria-label="AegisProbe, volver al inicio">
-            <span class="usuarios-symbol" aria-hidden="true">AP</span>
-            <span>Aegis<span class="usuarios-accent">Probe</span></span>
-        </a>
-
-        <nav class="usuarios-nav" aria-label="Navegación de usuarios">
-            <a href="index.html">Inicio</a>
-            <a href="login.html" aria-current="page">Iniciar sesión</a>
-            <a href="registro.html" class="usuarios-nav-cta">Registrarse</a>
-        </nav>
-    </header>
-
-    <main class="usuarios-main">
-        <div class="usuarios-layout">
-            <section class="usuarios-intro" aria-labelledby="titulo-intro">
-                <span class="usuarios-label">PENTESTING &amp; OFFENSIVE SECURITY</span>
-                <h1 id="titulo-intro">Tu seguridad.<br><span>Nuestro compromiso.</span></h1>
-                <p>Ingresa al espacio de usuarios de AegisProbe para administrar tu acceso de demostración.</p>
-
-                <div class="usuarios-visual" aria-hidden="true">
-                    <span class="usuarios-orbit"></span>
-                    <span class="usuarios-shield">AP</span>
-                    <span class="usuarios-dot"></span>
-                </div>
-
-                <p class="usuarios-caption">AegisProbe · Seguridad ofensiva</p>
-            </section>
-
-            <section class="usuarios-card" aria-labelledby="titulo-login">
-                <span class="usuarios-badge">Acceso de usuarios</span>
-                <h2 id="titulo-login">Bienvenido de nuevo</h2>
-                <p class="usuarios-subtitle">Inicia sesión con una cuenta registrada en este navegador.</p>
-
-                <p class="usuarios-notice" id="aviso-login">
+<header class="usuarios-header"><div class="usuarios-header-inner">
+<a aria-label="AegisProbe, volver al inicio" class="usuarios-brand" href="index.html">
+<img alt="" aria-hidden="true" class="usuarios-symbol" decoding="async" height="55" src="img/aegisprobe-logo.png" width="55"></img>
+<span>Aegis<span class="usuarios-accent">Probe</span></span>
+</a>
+<nav aria-label="Navegación de usuarios" class="usuarios-nav">
+<a href="index.html">Inicio</a>
+<a aria-current="page" href="login.html">Iniciar sesión</a>
+<a class="usuarios-nav-cta" href="registro.html">Registrarse</a>
+</nav>
+</div></header>
+<main class="usuarios-main">
+<div class="usuarios-layout">
+<section aria-labelledby="titulo-intro" class="usuarios-intro">
+<span class="usuarios-label">PENTESTING &amp; OFFENSIVE SECURITY</span>
+<h1 id="titulo-intro">Tu seguridad.<br/><span>Nuestro compromiso.</span></h1>
+<p>Ingresa al espacio de usuarios de AegisProbe para administrar tu acceso de demostración.</p>
+<div aria-hidden="true" class="usuarios-visual">
+<span class="usuarios-orbit"></span>
+<img alt="Logotipo oficial de AegisProbe" class="usuarios-shield-logo" decoding="async" height="220" src="img/aegisprobe-logo.png" width="220"></img>
+<span class="usuarios-dot"></span>
+</div>
+<p class="usuarios-caption">AegisProbe · Seguridad ofensiva</p>
+</section>
+<section aria-labelledby="titulo-login" class="usuarios-card">
+<span class="usuarios-badge">Acceso de usuarios</span>
+<h2 id="titulo-login">Bienvenido de nuevo</h2>
+<p class="usuarios-subtitle">Inicia sesión con una cuenta registrada en este navegador.</p>
+<p class="usuarios-notice" id="aviso-login">
                     Esta interfaz funciona como demostración local. No envía datos a un servidor.
                 </p>
-
-                <form class="usuarios-fields" id="form-login" aria-describedby="aviso-login" novalidate>
-                    <div class="usuarios-field">
-                        <label for="login-correo">Correo electrónico</label>
-                        <input type="email" id="login-correo" name="correo" placeholder="usuario@ejemplo.com" autocomplete="email" required>
-                    </div>
-
-                    <div class="usuarios-field">
-                        <label for="login-clave">Contraseña</label>
-                        <input type="password" id="login-clave" name="clave" placeholder="Ingresa tu contraseña" autocomplete="current-password" minlength="6" required>
-                    </div>
-
-                    <button type="submit" class="usuarios-button" id="boton-login-demo">
+<form aria-describedby="aviso-login" class="usuarios-fields" id="form-login" novalidate="">
+<div class="usuarios-field">
+<label for="login-correo">Correo electrónico</label>
+<input autocomplete="email" id="login-correo" name="correo" placeholder="usuario@ejemplo.com" required="" type="email"/>
+</div>
+<div class="usuarios-field">
+<label for="login-clave">Contraseña</label>
+<input autocomplete="current-password" id="login-clave" minlength="6" name="clave" placeholder="Ingresa tu contraseña" required="" type="password"/>
+</div>
+<button class="usuarios-button" id="boton-login-demo" type="submit">
                         Iniciar sesión <span aria-hidden="true">→</span>
-                    </button>
-                </form>
-
-                <p class="usuarios-feedback" id="mensaje-login" role="status" aria-live="polite" tabindex="-1" hidden></p>
-
-                <p class="usuarios-switch">¿No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
-                <a href="index.html" class="usuarios-back">← Volver a la página principal</a>
-            </section>
-        </div>
-    </main>
-
-    <div class="usuarios-modal" id="modal-login-exitoso" role="dialog" aria-modal="true" aria-labelledby="modal-login-titulo" hidden>
-        <div class="usuarios-modal-card">
-            <button class="usuarios-modal-close" type="button" data-modal-close aria-label="Cerrar mensaje">×</button>
-            <div class="usuarios-modal-icon" aria-hidden="true">✓</div>
-            <h3 id="modal-login-titulo">Inicio de sesión exitoso</h3>
-            <p>Bienvenido a AegisProbe. Tu acceso fue validado correctamente.</p>
-            <button type="button" class="usuarios-modal-action" data-modal-close>Aceptar</button>
-        </div>
-    </div>
-
-    <footer class="usuarios-footer">© 2026 AegisProbe · Pentesting &amp; Offensive Security</footer>
+</button>
+</form>
+<p aria-live="polite" class="usuarios-feedback" hidden="" id="mensaje-login" role="status" tabindex="-1"></p>
+<p class="usuarios-switch">¿No tienes una cuenta? <a href="registro.html">Regístrate</a></p>
+<a class="usuarios-back" href="index.html">← Volver a la página principal</a>
+</section>
+</div>
+</main>
+<div aria-labelledby="modal-login-titulo" aria-modal="true" class="usuarios-modal" hidden="" id="modal-login-exitoso" role="dialog">
+<div class="usuarios-modal-card">
+<button aria-label="Cerrar mensaje" class="usuarios-modal-close" data-modal-close="" type="button">×</button>
+<div aria-hidden="true" class="usuarios-modal-icon">✓</div>
+<h3 id="modal-login-titulo">Inicio de sesión exitoso</h3>
+<p>Bienvenido a AegisProbe. Tu acceso fue validado correctamente.</p>
+<button class="usuarios-modal-action" data-modal-close="" type="button">Aceptar</button>
+</div>
+</div>
+<footer class="usuarios-footer">© 2026 AegisProbe · Pentesting &amp; Offensive Security</footer>
 </body>
 </html>
