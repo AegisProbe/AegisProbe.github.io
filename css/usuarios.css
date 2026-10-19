@@ -674,3 +674,19 @@ body.modal-open {
         padding: 24px 18px;
     }
 }
+
+
+/* Logotipo PNG original, también en el panel ilustrado. */
+.usuarios-header {width:100%;min-height:85px;padding:0 24px;display:block;}
+.usuarios-header-inner {width:100%;max-width:1200px;min-height:85px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;}
+.usuarios-brand {flex-shrink:0; white-space:nowrap;}
+.usuarios-symbol {width:55px;height:55px;flex-shrink:0;object-fit:contain;display:block;background:none;color:inherit;font-size:inherit;}
+.usuarios-shield-logo {position:relative;z-index:1;display:block;width:min(235px,65%);height:auto;max-height:245px;object-fit:contain;filter:drop-shadow(0 12px 20px rgba(0,200,255,.3));}
+.usuarios-visual {isolation:isolate;}
+.usuarios-visual .usuarios-orbit {pointer-events:none;}
+@media (max-width:850px){
+ .usuarios-header {padding:12px 18px;}
+ .usuarios-header-inner {flex-direction:column;gap:10px;min-height:0;}
+ .usuarios-nav {justify-content:center;gap:12px;}
+}
+@media (max-width:480px){.usuarios-symbol {width:45px;height:45px;} .usuarios-brand{font-size:22px;}}
