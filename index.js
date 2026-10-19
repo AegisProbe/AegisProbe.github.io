@@ -160,3 +160,56 @@ configurarBotonDemo(
     "mensaje-registro",
     "Esta es una vista de demostración. No se ha creado una cuenta ni se han enviado datos."
 );
+
+
+/* Carrusel corporativo de Nuestra misión (autoplay, teclado, pausa y movilidad reducida). */
+(function configurarCarruselMision() {
+    const root = document.getElementById('carrusel-mision');
+    if (!root) return;
+    const slides = Array.from(root.querySelectorAll('.mission-slide'));
+    const dots = Array.from(root.querySelectorAll('.mission-dot'));
+    const prev = root.querySelector('.mission-prev');
+    const next = root.querySelector('.mission-next');
+    if (!slides.length || !prev || !next) return;
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let current = 0;
+    let timer = null;
+    let pausedByUser = false;
+    function show(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, i) => {
+            const active = i === current;
+            slide.classList.toggle('is-active', active);
+            slide.setAttribute('aria-hidden', String(!active));
+            slide.querySelectorAll('a,button').forEach(el => { el.tabIndex = active ? 0 : -1; });
+        });
+        dots.forEach((dot, i) => {
+            const active = i === current;
+            dot.classList.toggle('is-active', active);
+            if (active) dot.setAttribute('aria-current', 'true');
+            else dot.removeAttribute('aria-current');
+        });
+    }
+    function stop() { if (timer !== null) { clearInterval(timer); timer = null; } }
+    function start() {
+        stop();
+        if (motion.matches || document.hidden || pausedByUser) return;
+        timer = setInterval(() => show(current + 1), 4800);
+    }
+    function go(delta) { show(current + delta); start(); }
+    prev.addEventListener('click', () => go(-1));
+    next.addEventListener('click', () => go(1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => {show(i); start();}));
+    root.addEventListener('mouseenter', () => {pausedByUser=true; stop();});
+    root.addEventListener('mouseleave', () => {pausedByUser=false; start();});
+    root.addEventListener('focusin', () => {pausedByUser=true; stop();});
+    root.addEventListener('focusout', ev => {if (!root.contains(ev.relatedTarget)) {pausedByUser=false;start();}});
+    root.addEventListener('keydown', ev => {
+        if (ev.key === 'ArrowLeft') {ev.preventDefault(); show(current - 1);}
+        if (ev.key === 'ArrowRight') {ev.preventDefault(); show(current + 1);}
+    });
+    document.addEventListener('visibilitychange', start);
+    if (typeof motion.addEventListener === 'function') motion.addEventListener('change', start);
+    show(0);
+    start();
+})();
