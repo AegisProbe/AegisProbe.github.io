@@ -1,0 +1,187 @@
+/* =============================================================
+   AEGISPROBE · PANEL DE CLIENTES (MI CUENTA)
+   Diseño aislado: evita cambios involuntarios en otras páginas.
+   No añade ni modifica archivos de la carpeta img/.
+   ============================================================= */
+#pagina-cuenta { background: #F5F8FC; color: #0B1220; }
+#pagina-cuenta *, #pagina-cuenta *::before, #pagina-cuenta *::after { box-sizing: border-box; }
+#pagina-cuenta [hidden] { display: none !important; }
+#pagina-cuenta .nav [aria-current="page"] { color: #0077FF; }
+#pagina-cuenta .header { background: rgba(255,255,255,.97); }
+#pagina-cuenta :focus-visible { outline: 3px solid #00AEE0; outline-offset: 3px; }
+.cuenta-main { width: min(1200px, calc(100% - 48px)); margin: 0 auto; padding: 30px 0 76px; min-width: 0; }
+.cuenta-hero { position: relative; isolation: isolate; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 288px; padding: clamp(30px,4vw,54px); background: radial-gradient(circle at 83% 27%, rgba(0,200,255,.20), transparent 29%), linear-gradient(118deg, #071A33 0%, #0D2B4D 77%, #134775 100%); border-radius: 24px; box-shadow: 0 18px 38px rgba(7,26,51,.16); }
+.cuenta-hero::after {content:""; position:absolute; width:400px; height:400px; right:-160px; bottom:-260px; border:1px solid rgba(255,255,255,.1); border-radius:50%; pointer-events:none; }
+.cuenta-hero-contenido { position: relative; z-index: 1; max-width: 690px; min-width: 0; }
+.cuenta-eyebrow { display:inline-flex; align-items:center; gap:9px; color:#7BE0FF; font-size:11px; font-weight:800; letter-spacing:2.2px; }
+.cuenta-eyebrow-punto { width:8px; height:8px; border-radius:50%; background:#00C8FF; box-shadow:0 0 0 5px rgba(0,200,255,.15); }
+.cuenta-hero h1 { color:#fff; font-size:clamp(30px,4vw,51px); line-height:1.09; letter-spacing:-1.4px; margin:15px 0 13px; max-width:650px; }
+.cuenta-hero h1 span { color:#4BC6FF; }
+.cuenta-hero p { color:#C6D3E1; font-size:clamp(14px,1.25vw,17px); line-height:1.65; max-width:605px; }
+.cuenta-hero-acciones { display:flex; align-items:center; flex-wrap:wrap; gap:12px; margin-top:27px; }
+.cuenta-boton { display:inline-flex; align-items:center; justify-content:center; gap:12px; padding:12px 18px; min-height:46px; border-radius:10px; font-size:13px; font-weight:800; line-height:1.3; text-align:center; text-decoration:none; white-space:normal; transition:transform .2s, box-shadow .2s, background .2s; }
+.cuenta-boton:hover { transform:translateY(-2px); }
+.cuenta-boton-primario {background:linear-gradient(130deg,#0077FF,#00B7E8);color:white;box-shadow:0 7px 18px rgba(0,119,255,.2);}
+.cuenta-boton-primario:hover {color:white;box-shadow:0 10px 22px rgba(0,119,255,.32);}
+.cuenta-boton-contorno {border:1px solid rgba(255,255,255,.32);color:#fff;background:rgba(255,255,255,.07);}
+.cuenta-boton-contorno:hover { color:#fff; background:rgba(255,255,255,.15); }
+.cuenta-hero-marca {position:relative; flex:0 0 235px;height:210px; display:flex;align-items:center;justify-content:center;}
+.cuenta-hero-anillo {position:absolute;border-radius:50%;border:1px solid rgba(72,205,255,.25);}
+.cuenta-hero-anillo-uno {width:195px;height:195px;}
+.cuenta-hero-anillo-dos {width:235px;height:235px;border-style:dashed;border-color:rgba(255,255,255,.16);}
+.cuenta-hero-emblema {position:relative; z-index:1;width:142px;height:142px;padding:15px;display:grid;place-items:center; border-radius:29px; background:rgba(255,255,255,.12);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.12);box-shadow:0 10px 30px rgba(0,0,0,.16);}
+.cuenta-hero-emblema img {display:block;width:100%;height:100%;object-fit:contain;}
+.cuenta-hero-marca-texto {position:absolute;bottom:0;font-size:10px;font-weight:800;color:#7BDDF7;letter-spacing:2px;white-space:nowrap;}
+.cuenta-paneles { margin-top: 24px; }
+.cuenta-kpis { display:grid; grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-bottom:25px; }
+.cuenta-kpi,.cuenta-panel {background:#fff;border:1px solid #DCE6F0;border-radius:18px;box-shadow:0 8px 25px rgba(7,26,51,.05);min-width:0;}
+.cuenta-kpi {display:flex;align-items:center;gap:17px;min-height:121px;padding:23px 24px;}
+.cuenta-kpi-icono {flex:0 0 54px;height:54px;display:grid;place-items:center;border-radius:15px;color:#0077FF;background:#EAF5FF;}
+.cuenta-kpi-icono svg {width:25px;height:25px;}
+.cuenta-kpi-icono-ambar {color:#B7791F;background:#FFF5DD;}
+.cuenta-kpi-icono-verde {color:#0C9C73;background:#E4F8EF;}
+.cuenta-kpi-detalle {display:flex; flex-direction:column;gap:2px;min-width:0;}
+.cuenta-kpi-detalle strong {font-size:clamp(28px,3vw,38px);color:#071A33;line-height:1.05;font-weight:800;}
+.cuenta-kpi-detalle span {font-size:14px;color:#26374A;font-weight:800;}
+.cuenta-kpi-detalle small {font-size:12px;color:#718096;line-height:1.5;}
+.cuenta-columnas {display:grid;grid-template-columns:minmax(260px, .82fr) minmax(0,1.7fr);gap:22px;align-items:start;}
+.cuenta-lateral {display:grid;gap:22px;min-width:0;}
+.cuenta-panel {padding:clamp(21px,2.35vw,29px);}
+.cuenta-panel-etiqueta {display:block;margin-bottom:9px;color:#0077FF;font-size:11px;font-weight:800;letter-spacing:1.9px;}
+.cuenta-panel h2,.cuenta-recursos h2 {font-size:clamp(20px,2.2vw,26px);line-height:1.23;color:#071A33;margin:0 0 8px;letter-spacing:-.45px;}
+.cuenta-panel-encabezado p,.cuenta-historial-encabezado p,.cuenta-recursos-encabezado p {font-size:13px;color:#708097;line-height:1.6;}
+.cuenta-perfil-identidad {display:flex;align-items:center;gap:14px;margin:24px 0 22px;min-width:0;}
+.cuenta-avatar {flex:0 0 64px;height:64px;border-radius:19px;display:grid;place-items:center;background:linear-gradient(145deg,#0077FF,#00C8FF);color:white;font-size:23px;font-weight:800;box-shadow:0 8px 22px rgba(0,119,255,.18);}
+.cuenta-identidad-texto {min-width:0;display:grid;gap:5px;}
+.cuenta-identidad-texto strong {color:#071A33;font-size:17px;line-height:1.25;overflow-wrap:anywhere;}
+.cuenta-identidad-texto span {color:#617087;font-size:12px;overflow-wrap:anywhere;line-height:1.4;}
+.cuenta-detalles {border-top:1px solid #E8EDF4;padding:5px 0 0;}
+.cuenta-detalles > div {display:grid;gap:8px;padding-top:16px;}
+.cuenta-detalles dt {font-size:12px;color:#748499;font-weight:700;}
+.cuenta-detalles dd {font-size:13px;color:#25394D;font-weight:700;line-height:1.45;overflow-wrap:anywhere;}
+.cuenta-estado-cuenta {display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;font-size:12px;font-weight:800;background:#EAF5FF;color:#0077FF;}
+.cuenta-estado-cuenta.is-verificado {background:#E5F8F1;color:#087D5C;}
+.cuenta-estado-cuenta.is-pendiente {background:#FFF4DC;color:#96630C;}
+.cuenta-enlace-suave {display:inline-block;margin-top:25px;font-size:12px;color:#0077FF;font-weight:800;}
+.cuenta-seguridad {position:relative;overflow:hidden;background:#F2F8FF;}
+.cuenta-seguridad::before {content:"";width:120px;height:120px;position:absolute;right:-40px;top:-50px;background:rgba(0,119,255,.055);border-radius:50%;}
+.cuenta-seguridad-icono {height:45px;width:45px;display:grid;place-items:center;border-radius:12px;background:#DCEEFF;color:#0077FF;margin-bottom:17px;}
+.cuenta-seguridad-icono svg {height:23px;width:23px;}
+.cuenta-seguridad h2 {font-size:19px;}
+.cuenta-seguridad p {font-size:13px;color:#57687D;line-height:1.7;}
+.cuenta-seguridad a {display:inline-flex;margin-top:15px;color:#0077FF;font-size:12px;font-weight:800;line-height:1.5;}
+.cuenta-historial {min-height:475px;}
+.cuenta-historial-encabezado {display:flex;align-items:start;justify-content:space-between;gap:15px;}
+.cuenta-historial-encabezado > div {min-width:0;}
+.cuenta-actualizar {flex-shrink:0;display:inline-flex;align-items:center;gap:7px;padding:10px 12px;border:1px solid #DCE6F0;border-radius:9px;background:#fff;color:#0077FF;font-weight:800;font-size:12px;cursor:pointer;transition:background .2s;}
+.cuenta-actualizar:hover {background:#F2F8FF;}
+.cuenta-actualizar:disabled {opacity:.5;cursor:wait;}
+.cuenta-actualizar span {font-size:18px;line-height:1;}
+.cuenta-herramientas {display:flex;align-items:center;justify-content:space-between;gap:14px;margin:23px 0 17px;padding:14px 15px;background:#F7FAFE;border:1px solid #E5EDF6;border-radius:11px;}
+.cuenta-herramientas label {color:#344A62;font-size:12px;font-weight:800;}
+.cuenta-filtro {width:min(205px,100%);padding:10px 14px;border:1px solid #DCE6F0;background:#fff;color:#071A33;border-radius:9px;font:inherit;font-size:12px;}
+.cuenta-estado {font-size:12px;color:#728199;line-height:1.55;margin:0 0 15px;}
+.cuenta-estado-error {color:#B4232E;background:#FFF0F1;border:1px solid #FFD5DA;padding:12px;border-radius:10px;}
+.cuenta-tabla-contenedor {width:100%;max-width:100%;overflow-x:auto;border:1px solid #E7ECF4;border-radius:13px;}
+.cuenta-tabla {width:100%;border-collapse:collapse;table-layout:auto;font-size:12px;}
+.cuenta-tabla thead {background:#F1F7FF;}
+.cuenta-tabla th {padding:14px 13px;text-align:left;font-weight:800;color:#324A65;white-space:nowrap;}
+.cuenta-tabla td {padding:16px 13px;vertical-align:middle;color:#526279;border-top:1px solid #EBEFF6;overflow-wrap:anywhere;line-height:1.4;}
+.cuenta-tabla tbody tr:hover {background:#F9FBFE;}
+.cuenta-etiqueta-estado,.cuenta-etiqueta-urgencia {display:inline-flex;align-items:center;padding:6px 9px;border-radius:999px;font-size:11px;font-weight:800;white-space:nowrap;}
+.cuenta-etiqueta-estado {background:#F1F5F9;color:#566678;}
+.cuenta-estado-pendiente {background:#FFF3DC;color:#96630C;}
+.cuenta-estado-en_revision {background:#EAF5FF;color:#006BD6;}
+.cuenta-estado-contactado {background:#EBEDFF;color:#6053B8;}
+.cuenta-estado-cerrado {background:#E4F8EE;color:#087B55;}
+.cuenta-etiqueta-urgencia {background:#F1F5F9;color:#536375;}
+.cuenta-urgencia-alta {background:#FFF0DF;color:#A86012;}
+.cuenta-urgencia-critica {background:#FFF0F1;color:#B4232E;}
+.cuenta-vacio {padding:42px 18px 38px;text-align:center;border:1px dashed #CCDDF0;border-radius:14px;background:linear-gradient(180deg,#FBFDFF,#F5FAFF);}
+.cuenta-vacio-icono {width:66px;height:66px;margin:0 auto 17px;display:grid;place-items:center;border-radius:19px;background:#E7F2FF;color:#0077FF;}
+.cuenta-vacio-icono svg {height:30px;width:30px;}
+.cuenta-vacio h3 {font-size:18px;color:#071A33;margin:0 0 8px;}
+.cuenta-vacio p {max-width:330px;margin:0 auto 20px;color:#6A7B91;font-size:13px;line-height:1.65;}
+.cuenta-historial-pie {border-top:1px solid #E7ECF4;margin-top:22px;padding-top:18px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.cuenta-historial-pie span {font-size:11px;color:#8190A2;line-height:1.5;}
+.cuenta-historial-pie a {flex-shrink:0;color:#0077FF;font-size:12px;font-weight:800;}
+.cuenta-recursos {margin-top:35px;}
+.cuenta-recursos-encabezado {margin-bottom:22px;}
+.cuenta-recursos-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+.cuenta-recurso {display:flex;flex-direction:column;align-items:flex-start;gap:10px;min-height:215px;padding:25px;background:#fff;border:1px solid #DCE6F0;border-radius:17px;box-shadow:0 6px 18px rgba(7,26,51,.04);text-decoration:none;transition:border-color .2s, transform .2s,box-shadow .2s;}
+.cuenta-recurso:hover {border-color:#91C4FF;transform:translateY(-3px);box-shadow:0 12px 28px rgba(7,26,51,.08);}
+.cuenta-recurso-icono {width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:#EAF5FF;color:#0077FF;font-size:21px;font-weight:800;}
+.cuenta-recurso strong {font-size:16px;color:#071A33;line-height:1.35;}
+.cuenta-recurso > span:not(.cuenta-recurso-icono):not(.cuenta-recurso-ver) {color:#6B7C92;font-size:13px;line-height:1.6;}
+.cuenta-recurso-ver {margin-top:auto;padding-top:9px;color:#0077FF;font-size:12px;font-weight:800;}
+.cuenta-invitado {display:flex;align-items:center;gap:22px;padding:29px;margin-top:24px;background:#fff;border:1px solid #DCE6F0;border-radius:18px;box-shadow:0 6px 19px rgba(7,26,51,.05);}
+.cuenta-invitado-icono {flex:0 0 56px;height:56px;display:grid;place-items:center;background:#EAF5FF;border-radius:15px;font-size:23px;}
+.cuenta-invitado > div:nth-child(2) {flex:1;min-width:0;}
+.cuenta-invitado h2 {font-size:22px;color:#071A33;margin-bottom:6px;}
+.cuenta-invitado p {font-size:13px;color:#63758C;}
+/* Desktop estrecho y ventanas minimizadas */
+@media (max-width: 1100px) {
+  .cuenta-columnas {grid-template-columns:minmax(260px,.9fr) minmax(0,1.5fr);gap:16px;}
+  .cuenta-kpis,.cuenta-recursos-grid {gap:14px;}
+  .cuenta-kpi {padding:19px 17px;gap:12px;}
+  .cuenta-kpi-icono {flex-basis:46px;height:46px;}
+  .cuenta-panel {padding:22px;}
+}
+@media (max-width: 920px) {
+  .cuenta-main {width:min(780px,calc(100% - 36px));padding-top:22px;}
+  .cuenta-hero {min-height:255px;}
+  .cuenta-hero-marca {flex-basis:170px;opacity:.8;}
+  .cuenta-hero-anillo-uno {width:155px;height:155px;}
+  .cuenta-hero-anillo-dos {width:175px;height:175px;}
+  .cuenta-hero-emblema {width:115px;height:115px;}
+  .cuenta-columnas {grid-template-columns:minmax(0,1fr);}
+  .cuenta-lateral {grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;}
+  .cuenta-kpi {min-height:108px;}
+  .cuenta-historial {min-height:0;}
+}
+@media (max-width: 700px) {
+  .cuenta-main {width:calc(100% - 28px);padding:14px 0 48px;}
+  .cuenta-hero {min-height:0;padding:30px 25px;border-radius:18px;}
+  .cuenta-hero-marca {display:none;}
+  .cuenta-hero h1 {letter-spacing:-.65px;}
+  .cuenta-kpis {grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+  .cuenta-kpi:last-child {grid-column:1/-1;}
+  .cuenta-lateral {grid-template-columns:1fr;gap:14px;}
+  .cuenta-panel {padding:21px 18px;}
+  .cuenta-historial-encabezado {flex-wrap:wrap;}
+  .cuenta-recursos-grid {grid-template-columns:1fr;gap:12px;}
+  .cuenta-recurso {min-height:0;padding:20px;}
+  .cuenta-herramientas {flex-wrap:wrap;}
+  .cuenta-invitado {flex-wrap:wrap;padding:20px;}
+}
+@media (max-width: 520px) {
+  .cuenta-hero {padding:26px 19px;}
+  .cuenta-eyebrow {font-size:10px;letter-spacing:1.5px;}
+  .cuenta-hero-acciones {align-items:stretch;flex-direction:column;}
+  .cuenta-hero-acciones .cuenta-boton {width:100%;}
+  .cuenta-kpis {grid-template-columns:1fr;}
+  .cuenta-kpi:last-child {grid-column:auto;}
+  .cuenta-kpi {min-height:88px;padding:18px;}
+  .cuenta-kpi-detalle strong {font-size:30px;}
+  .cuenta-herramientas {align-items:stretch;flex-direction:column;gap:8px;}
+  .cuenta-filtro {width:100%;}
+  .cuenta-actualizar {min-height:42px;}
+  .cuenta-tabla-contenedor {overflow:visible;border:none;border-radius:0;}
+  .cuenta-tabla,.cuenta-tabla tbody,.cuenta-tabla tr,.cuenta-tabla td {display:block;width:100%;}
+  .cuenta-tabla thead {position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;}
+  .cuenta-tabla tbody {display:grid;gap:12px;}
+  .cuenta-tabla tr {background:#fff;border:1px solid #DCE6F0;border-radius:12px;overflow:hidden;padding:7px 13px;}
+  .cuenta-tabla td {display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-top:0;border-bottom:1px solid #E9EFF7;min-width:0;}
+  .cuenta-tabla td:last-child {border-bottom:0;}
+  .cuenta-tabla td::before {content:attr(data-label);color:#8190A2;font-weight:800;flex:0 0 82px;}
+  .cuenta-tabla td {text-align:right;}
+  .cuenta-historial-pie {align-items:flex-start;flex-direction:column;}
+}
+@media (max-width: 360px) {
+  .cuenta-main {width:calc(100% - 20px);}
+  .cuenta-hero {padding:24px 16px;}
+  .cuenta-panel {padding:18px 15px;}
+  .cuenta-avatar {flex-basis:52px;height:52px;border-radius:15px;font-size:19px;}
+  .cuenta-perfil-identidad {gap:10px;}
+}
+@media (prefers-reduced-motion: reduce) { .cuenta-boton,.cuenta-recurso {transition:none;} }

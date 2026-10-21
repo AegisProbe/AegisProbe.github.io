@@ -989,7 +989,7 @@ footer {
     width: 40px;
     height: 40px;
 
-    background-image: url("../img/aegisprobe-logo.png");
+    background-image: url("../img/aegisprobe-logo.svg");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -1777,92 +1777,174 @@ footer p {
     }
 }
 
-
-/* =============================================================
-   AegisProbe · Identidad visual 2026
-   Banners corporativos, carrusel y cabeceras coherentes
-============================================================= */
-:root { --aegis-navy: #071A33; --aegis-blue:#0077FF; --aegis-cyan:#00C8FF; }
-/* El encabezado del informe comparte exactamente la estructura de inicio. */
-.header { width:100%; min-height:85px; padding:0 24px; display:block; }
-.header-inner {max-width:1200px; width:100%; margin:0 auto; min-height:85px; display:flex; align-items:center; justify-content:space-between; gap:20px;}
-.brand {flex-shrink:0;}
-.brand-logo, .footer-logo {background:none; object-fit:contain; object-position:center; display:block; flex-shrink:0;}
-.brand-logo {width:55px; height:55px;}
-.footer-logo {width:40px; height:40px;}
-.nav { display:flex; align-items:center; justify-content:flex-end; gap:clamp(10px,1.25vw,25px); flex-wrap:nowrap;}
-.nav a {white-space:nowrap;}
-/* Cuatro banners con escenas corporativas diferentes. */
-.corporate-banner, #hero-informe.page-hero {
-    display:flex; flex-direction:column; align-items:flex-start; justify-content:center;
-    position:relative; isolation:isolate; text-align:left; min-height:290px;
-    padding:58px max(24px, calc((100% - 1150px) / 2));
-    background-color:#071A33; background-size:cover; background-position:center; background-repeat:no-repeat;
+/* ==========================================================
+   MEJORA CORPORATIVA: banners temáticos e imágenes de misión
+   Recursos SVG locales: las imágenes no requieren internet.
+========================================================== */
+.page-hero {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 292px;
+    padding: 64px max(25px, calc((100% - 1150px) / 2));
+    text-align: left;
+    background-color: #071A33;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
-.corporate-banner h1, .corporate-banner p, #hero-informe.page-hero h1, #hero-informe.page-hero p {
-    margin-left:0; margin-right:0; max-width:640px; position:relative; z-index:1;
-    text-shadow:0 2px 16px rgba(0,5,16,.25);
+.page-hero h1,
+.page-hero p {
+    position: relative;
+    z-index: 1;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 650px;
+    text-shadow: 0 2px 12px rgba(1, 13, 31, .25);
 }
-.corporate-banner h1, #hero-informe.page-hero h1 {font-size:clamp(32px,4vw,48px);line-height:1.14;}
-.corporate-banner p, #hero-informe.page-hero p {font-size:clamp(15px,1.7vw,18px);}
-#servicios.corporate-banner {
-    background-image:linear-gradient(90deg,#071A33 0%,rgba(7,26,51,.96) 29%,rgba(7,26,51,.52) 60%,rgba(7,26,51,.08) 100%),url('../img/banner-servicios.svg');
+.page-hero h1 {font-size: clamp(34px, 4vw, 49px); line-height: 1.13;}
+.page-hero p {font-size: clamp(15px, 1.65vw, 18px);}
+#servicios.page-hero {
+    background-image: linear-gradient(90deg, #071A33 0%, rgba(7,26,51,.98) 26%, rgba(7,26,51,.44) 62%, rgba(7,26,51,.05) 100%), url("../img/banner-servicios.svg");
 }
-#metodologia.corporate-banner {
-    background-image:linear-gradient(90deg,#071A33 0%,rgba(7,26,51,.96) 29%,rgba(7,26,51,.52) 60%,rgba(7,26,51,.08) 100%),url('../img/banner-metodologia.svg');
+#metodologia.page-hero {
+    background-image: linear-gradient(90deg, #071A33 0%, rgba(7,26,51,.98) 26%, rgba(7,26,51,.42) 62%, rgba(7,26,51,.03) 100%), url("../img/banner-metodologia.svg");
 }
-#nosotros.corporate-banner {
-    background-image:linear-gradient(90deg,#071A33 0%,rgba(7,26,51,.96) 29%,rgba(7,26,51,.52) 60%,rgba(7,26,51,.08) 100%),url('../img/banner-nosotros.svg');
+#nosotros.page-hero {
+    background-image: linear-gradient(90deg, #071A33 0%, rgba(7,26,51,.98) 26%, rgba(7,26,51,.45) 62%, rgba(7,26,51,.03) 100%), url("../img/banner-nosotros.svg");
 }
-#contacto.corporate-banner {
-    background-image:linear-gradient(90deg,#071A33 0%,rgba(7,26,51,.96) 29%,rgba(7,26,51,.52) 60%,rgba(7,26,51,.08) 100%),url('../img/banner-contacto.svg');
+#contacto.page-hero {
+    background-image: linear-gradient(90deg, #071A33 0%, rgba(7,26,51,.98) 26%, rgba(7,26,51,.46) 62%, rgba(7,26,51,.03) 100%), url("../img/banner-contacto.svg");
 }
 #hero-informe.page-hero {
-    background-image:linear-gradient(90deg,#071A33 0%,rgba(7,26,51,.96) 29%,rgba(7,26,51,.52) 60%,rgba(7,26,51,.08) 100%),url('../img/banner-metodologia.svg');
+    background-image: linear-gradient(90deg, #071A33 0%, rgba(7,26,51,.98) 30%, rgba(7,26,51,.46) 70%, rgba(7,26,51,.08) 100%), url("../img/banner-metodologia.svg");
 }
-/* Imagen de misión · transición accesible y sin scroll horizontal. */
-.about-visual {width:100%; min-height:0; background:#071A33; display:block; overflow:hidden; border-radius:22px; box-shadow:0 20px 42px rgba(7,26,51,.16); font-size:inherit;}
-.mission-carousel {position:relative; width:100%; aspect-ratio: 16 / 10; min-height:270px; background:#071A33; overflow:hidden;}
-.mission-slides {position:relative; width:100%; height:100%;}
-.mission-slide {position:absolute;inset:0; margin:0; opacity:0;visibility:hidden;transition:opacity .6s ease, visibility .6s ease;}
-.mission-slide.is-active {opacity:1;visibility:visible;z-index:1;}
-.mission-slide img {display:block; width:100%; height:100%;object-fit:cover;}
-.mission-slide figcaption {position:absolute;left:0;bottom:0;right:0; padding:44px 24px 33px; background:linear-gradient(transparent,rgba(3,16,35,.95)); color:white; font-size:20px; font-weight:700; line-height:1.25;}
-.mission-slide figcaption span {display:block; margin-top:6px; color:#C6D3E1; font-size:13px;font-weight:400;}
-.mission-arrow {position:absolute;z-index:3;top:44%;transform:translateY(-50%);width:41px;height:41px;border:1px solid rgba(255,255,255,.38);border-radius:50%;background:rgba(7,26,51,.8);color:#fff;cursor:pointer;font-size:18px;transition:background .2s ease;}
-.mission-arrow:hover {background:#0077FF;}
-.mission-prev {left:14px;} .mission-next {right:14px;}
-.mission-dots {position:absolute;z-index:3;bottom:10px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:9px;}
-.mission-dot {border:0;border-radius:50%;width:10px;height:10px;background:rgba(255,255,255,.57);cursor:pointer;transition:background .2s ease,width .2s ease;}
-.mission-dot.is-active {width:24px;border-radius:8px;background:#00C8FF;}
-.mission-arrow:focus-visible,.mission-dot:focus-visible {outline:3px solid #fff;outline-offset:3px;}
-@media (max-width:1250px) {
-  .header {padding:12px 22px;}
-  .header-inner {flex-wrap:wrap; justify-content:center;min-height:unset;gap:10px 20px;}
-  .nav {justify-content:center; flex-wrap:wrap;gap:10px 18px;}
+/* El carrusel reemplaza al emoji y mantiene las proporciones del layout. */
+.about-visual {
+    min-height: 0;
+    background: transparent;
+    border-radius: 20px;
+    overflow: hidden;
+    font-size: inherit;
+    display: block;
+    box-shadow: 0 20px 45px rgba(7, 26, 51, .13);
 }
-@media (max-width:850px) {
-  .header {padding:12px 14px;}
-  .header-inner {flex-direction:column;gap:12px;}
-  .nav {gap:10px 14px;}
-  .corporate-banner,#hero-informe.page-hero {padding:46px 5%; min-height:255px;}
-  .corporate-banner h1,.corporate-banner p,#hero-informe.page-hero h1,#hero-informe.page-hero p {max-width:620px;}
+.mission-carousel {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    width: 100%;
+    border-radius: inherit;
+    background: #071A33;
+    outline-offset: 5px;
 }
-@media (max-width:600px) {
-  .brand-logo {width:45px;height:45px;}
-  .brand-name {font-size:22px;}
-  .nav a {font-size:13px;}
-  .corporate-banner,#hero-informe.page-hero {padding:42px 22px; min-height:240px;background-position:66% center;background-size:auto 100%;}
-  .corporate-banner h1,.corporate-banner p,#hero-informe.page-hero h1,#hero-informe.page-hero p {max-width:100%;}
-  #servicios.corporate-banner,#metodologia.corporate-banner,#nosotros.corporate-banner,#contacto.corporate-banner {
-      background-image:linear-gradient(90deg,rgba(7,26,51,.98),rgba(7,26,51,.85)),var(--unused-banner);
-  }
-  #servicios.corporate-banner{--unused-banner:url('../img/banner-servicios.svg');}
-  #metodologia.corporate-banner{--unused-banner:url('../img/banner-metodologia.svg');}
-  #nosotros.corporate-banner{--unused-banner:url('../img/banner-nosotros.svg');}
-  #contacto.corporate-banner{--unused-banner:url('../img/banner-contacto.svg');}
-  .mission-carousel {min-height:240px;}
-  .mission-slide figcaption {font-size:17px;padding:30px 18px 31px;}
-  .mission-arrow {width:35px;height:35px;}
+.mission-slides {position: relative; width: 100%; height: 100%;}
+.mission-slide {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .65s ease, visibility .65s ease;
 }
-@media (prefers-reduced-motion:reduce){.mission-slide,.mission-dot,.mission-arrow {transition:none;}}
+.mission-slide.is-active {opacity: 1; visibility: visible; z-index: 1;}
+.mission-slide img {width: 100%; height: 100%; object-fit: cover; display: block;}
+.mission-slide figcaption {
+    position: absolute;
+    inset: auto 0 0;
+    padding: 35px 26px 34px;
+    background: linear-gradient(transparent, rgba(3, 16, 35, .93));
+    color: #fff;
+    font: bold 20px/1.3 Arial, sans-serif;
+}
+.mission-slide figcaption span {display: block; margin-top: 4px; color: #B8D9EC; font-size: 13px; font-weight: 400;}
+.mission-arrow {
+    position: absolute;
+    top: 44%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(7,26,51,.65);
+    border: 1px solid rgba(255,255,255,.35);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+}
+.mission-arrow:hover {background: #0077FF; transform: translateY(-50%) scale(1.06);}
+.mission-prev {left: 14px;}
+.mission-next {right: 14px;}
+.mission-dots {
+    position: absolute;
+    bottom: 11px;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    gap: 9px;
+}
+.mission-dot {width: 9px; height: 9px; padding: 0; border: none; border-radius: 50%; background: rgba(255,255,255,.44); cursor: pointer;}
+.mission-dot.is-active {width: 22px; border-radius: 8px; background: #00C8FF;}
+.mission-arrow:focus-visible,.mission-dot:focus-visible {outline: 3px solid #fff; outline-offset: 3px;}
+@media (max-width: 850px) {
+    .page-hero {min-height: 255px; padding: 54px 5%;}
+    .page-hero h1,.page-hero p {max-width: 590px;}
+    #servicios.page-hero,#metodologia.page-hero,#nosotros.page-hero,#contacto.page-hero,#hero-informe.page-hero {
+        background-position: 64% center;
+        background-blend-mode: normal;
+    }
+}
+@media (max-width: 600px) {
+    .page-hero {padding: 42px 22px; min-height: 230px;}
+    #servicios.page-hero,#metodologia.page-hero,#nosotros.page-hero,#contacto.page-hero,#hero-informe.page-hero {
+        background-size: auto 100%;
+        background-position: 67% center;
+    }
+    .page-hero h1,.page-hero p {max-width: 95%;}
+    .mission-slide figcaption {padding: 24px 19px 28px; font-size: 17px;}
+    .mission-slide figcaption span {font-size: 12px;}
+    .mission-arrow {width: 32px; height: 32px;}
+}
+@media (prefers-reduced-motion: reduce) {
+    .mission-slide,.mission-arrow {transition: none;}
+}
+
+
+/* ====== AEGISPROBE: Retoques de alineación en ventanas reducidas ====== */
+html {scroll-padding-top:100px;}
+body {min-width:0;}
+.header-inner,.hero,.section,.contact-section,.contact-grid {min-width:0;}
+.header .brand {min-width:0;}
+.header .nav {min-width:0;}
+@media (max-width:1050px) {
+  .header {padding:12px 18px;}
+  .header-inner {flex-wrap:wrap;min-height:0;justify-content:center;gap:10px 24px;}
+  .header .brand {justify-content:center;}
+  .header .nav {flex:1 1 100%;justify-content:center;flex-wrap:wrap;gap:10px 17px;}
+}
+@media (max-width:650px) {
+  .header {padding:12px 12px;}
+  .header-inner {gap:8px;}
+  .header .nav {gap:6px 11px;}
+  .header .nav a {font-size:12px;line-height:1.35;}
+  .header .nav #link-solicitar-auditoria {padding:8px 11px;}
+  .hero,.section,.contact-section {max-width:100%;}
+  .hero {gap:25px;}
+  .section-title {font-size:clamp(26px,6.6vw,36px);line-height:1.22;}
+  .page-hero h1 {overflow-wrap:anywhere;}
+  .form-container,.service-card,.contact-card,.comparison-card {min-width:0;}
+  .contact-section {gap:24px;}
+  footer {padding:25px 18px;}
+}
+@media (max-width:390px) {
+  .header .nav {gap:7px 8px;}
+  .header .nav a {font-size:11.5px;}
+  .header .brand-name {font-size:21px;}
+  .hero-text h1 {font-size:clamp(31px,9vw,38px);}
+}

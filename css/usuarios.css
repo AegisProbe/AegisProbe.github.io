@@ -675,18 +675,34 @@ body.modal-open {
     }
 }
 
+/* Logotipo AegisProbe compartido por ambas páginas de usuario. */
+.usuarios-symbol {object-fit: contain; flex: 0 0 auto; background: none; font-size: initial; color: inherit;}
+.usuarios-shield {width: 145px; height: 145px; background: none; clip-path: none; filter: drop-shadow(0 12px 25px rgba(0,200,255,.25));}
+.usuarios-shield img {display: block; width: 100%; height: 100%; object-fit: contain;}
 
-/* Logotipo PNG original, también en el panel ilustrado. */
-.usuarios-header {width:100%;min-height:85px;padding:0 24px;display:block;}
-.usuarios-header-inner {width:100%;max-width:1200px;min-height:85px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;}
-.usuarios-brand {flex-shrink:0; white-space:nowrap;}
-.usuarios-symbol {width:55px;height:55px;flex-shrink:0;object-fit:contain;display:block;background:none;color:inherit;font-size:inherit;}
-.usuarios-shield-logo {position:relative;z-index:1;display:block;width:min(235px,65%);height:auto;max-height:245px;object-fit:contain;filter:drop-shadow(0 12px 20px rgba(0,200,255,.3));}
-.usuarios-visual {isolation:isolate;}
-.usuarios-visual .usuarios-orbit {pointer-events:none;}
-@media (max-width:850px){
- .usuarios-header {padding:12px 18px;}
- .usuarios-header-inner {flex-direction:column;gap:10px;min-height:0;}
- .usuarios-nav {justify-content:center;gap:12px;}
+
+/* Supabase Auth: avisos y confirmación de correo */
+.usuarios-page [hidden] { display: none !important; }
+.usuarios-button:disabled, .usuarios-reenvio button:disabled {opacity: .65;cursor: wait; transform: none;}
+.usuarios-reenvio {margin-top: 20px; padding: 17px; border-radius: 10px; border: 1px solid var(--usuarios-borde); background: #F2F8FF; text-align: center;}
+.usuarios-reenvio p { color: var(--usuarios-gris); font-size: 13px; margin-bottom: 10px; }
+.usuarios-reenvio button {background: transparent; border: 1px solid var(--usuarios-azul); border-radius: 8px; padding: 11px 16px; color: var(--usuarios-azul); font: inherit; font-size: 13px; font-weight: bold; cursor: pointer;}
+.usuarios-reenvio button:hover:not(:disabled) {background: #e1efff;}
+.usuarios-confirmacion-main {flex: 1; display: flex; justify-content: center; align-items: center; padding: 70px 20px;}
+.usuarios-confirmacion-card {width: min(520px,100%); text-align: center;}
+.usuarios-confirmacion-card h1 {color:var(--usuarios-azul-oscuro); font-size:clamp(24px,4vw,31px); line-height:1.25; margin-bottom:14px;}
+.usuarios-confirmacion-card .usuarios-back {margin-top:20px;}
+
+
+/* Ventanas pequeñas: navegación de acceso estable */
+@media (max-width: 650px) {
+  .usuarios-header {padding:14px 12px;gap:12px;}
+  .usuarios-nav {flex-wrap:wrap;gap:9px 13px;justify-content:center;}
+  .usuarios-nav a {font-size:13px;white-space:nowrap;}
+  .usuarios-main {width:min(100% - 26px, 520px);}
+  .usuarios-card {min-width:0;}
 }
-@media (max-width:480px){.usuarios-symbol {width:45px;height:45px;} .usuarios-brand{font-size:22px;}}
+@media (max-width:390px) {
+  .usuarios-nav a {font-size:12px;}
+  .usuarios-card {padding:24px 17px;}
+}
