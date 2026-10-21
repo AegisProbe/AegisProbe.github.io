@@ -1948,3 +1948,43 @@ body {min-width:0;}
   .header .brand-name {font-size:21px;}
   .hero-text h1 {font-size:clamp(31px,9vw,38px);}
 }
+
+
+/* =======================================
+   NUESTRO EQUIPO · Cuatro integrantes
+   Desktop 4 / tablet 2 / móvil 1
+======================================= */
+#equipo .team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+#equipo .team-card {
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#equipo .team-card .team-photo {
+    flex-shrink: 0;
+    object-fit: cover;
+    object-position: center 28%;
+}
+#equipo .team-card p {
+    flex: 1;
+    overflow-wrap: break-word;
+}
+#equipo .team-card .team-badge {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    margin-top: auto;
+}
+@media (max-width: 1050px) {
+    #equipo .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 650px) {
+    #equipo .team-grid { grid-template-columns: minmax(0, 1fr); }
+    #equipo .team-card { padding: 24px 20px; }
+}
