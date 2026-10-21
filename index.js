@@ -1,23 +1,6 @@
 "use strict";
 
-// Formulario de auditoría: simulación visual sin envío a un servidor.
-const formulario = document.getElementById("formulario-auditoria");
-const confirmacion = document.getElementById("confirmacion");
-
-if (formulario && confirmacion) {
-    formulario.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        alert(
-            "¡Solicitud recibida con éxito!\n\n" +
-            "No nos llames, nosotros te llamaremos."
-        );
-
-        formulario.reset();
-        confirmacion.style.display = "flex";
-        confirmacion.scrollIntoView({ behavior: "smooth" });
-    });
-}
+// Envío real de auditorías: auditorias.js (módulo Supabase).
 
 // Carrusel de reseñas de la página principal.
 function configurarCarruselTestimonios() {
@@ -135,81 +118,49 @@ function configurarCarruselTestimonios() {
 
 configurarCarruselTestimonios();
 
-// Compatibilidad con versiones antiguas de login/registro que usaban index.js.
-function configurarBotonDemo(idBoton, idMensaje, texto) {
-    const boton = document.getElementById(idBoton);
-    const mensaje = document.getElementById(idMensaje);
-
-    if (boton && mensaje) {
-        boton.addEventListener("click", function () {
-            mensaje.textContent = texto;
-            mensaje.hidden = false;
-            mensaje.focus();
-        });
-    }
-}
-
-configurarBotonDemo(
-    "boton-login-demo",
-    "mensaje-login",
-    "Esta es una vista de demostración. No se ha iniciado una sesión ni se han enviado datos."
-);
-
-configurarBotonDemo(
-    "boton-registro-demo",
-    "mensaje-registro",
-    "Esta es una vista de demostración. No se ha creado una cuenta ni se han enviado datos."
-);
-
-
-/* Carrusel corporativo de Nuestra misión (autoplay, teclado, pausa y movilidad reducida). */
+/* Carrusel automático accesible de la sección «Nuestra misión». */
 (function configurarCarruselMision() {
-    const root = document.getElementById('carrusel-mision');
-    if (!root) return;
-    const slides = Array.from(root.querySelectorAll('.mission-slide'));
-    const dots = Array.from(root.querySelectorAll('.mission-dot'));
-    const prev = root.querySelector('.mission-prev');
-    const next = root.querySelector('.mission-next');
-    if (!slides.length || !prev || !next) return;
-    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const raiz = document.getElementById('carrusel-mision');
+    if (!raiz) return;
+    const slides = Array.from(raiz.querySelectorAll('.mission-slide'));
+    const dots = Array.from(raiz.querySelectorAll('.mission-dot'));
+    const prev = raiz.querySelector('.mission-prev');
+    const next = raiz.querySelector('.mission-next');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let current = 0;
     let timer = null;
-    let pausedByUser = false;
     function show(index) {
         current = (index + slides.length) % slides.length;
         slides.forEach((slide, i) => {
             const active = i === current;
             slide.classList.toggle('is-active', active);
             slide.setAttribute('aria-hidden', String(!active));
-            slide.querySelectorAll('a,button').forEach(el => { el.tabIndex = active ? 0 : -1; });
         });
         dots.forEach((dot, i) => {
-            const active = i === current;
-            dot.classList.toggle('is-active', active);
-            if (active) dot.setAttribute('aria-current', 'true');
+            dot.classList.toggle('is-active', i === current);
+            if (i === current) dot.setAttribute('aria-current', 'true');
             else dot.removeAttribute('aria-current');
         });
     }
-    function stop() { if (timer !== null) { clearInterval(timer); timer = null; } }
+    function stop() { if (timer !== null) {window.clearInterval(timer); timer = null;} }
     function start() {
         stop();
-        if (motion.matches || document.hidden || pausedByUser) return;
-        timer = setInterval(() => show(current + 1), 4800);
+        if (reducedMotion.matches || document.hidden) return;
+        timer = window.setInterval(() => show(current + 1), 5000);
     }
-    function go(delta) { show(current + delta); start(); }
-    prev.addEventListener('click', () => go(-1));
-    next.addEventListener('click', () => go(1));
+    prev.addEventListener('click', () => {show(current - 1); start();});
+    next.addEventListener('click', () => {show(current + 1); start();});
     dots.forEach((dot, i) => dot.addEventListener('click', () => {show(i); start();}));
-    root.addEventListener('mouseenter', () => {pausedByUser=true; stop();});
-    root.addEventListener('mouseleave', () => {pausedByUser=false; start();});
-    root.addEventListener('focusin', () => {pausedByUser=true; stop();});
-    root.addEventListener('focusout', ev => {if (!root.contains(ev.relatedTarget)) {pausedByUser=false;start();}});
-    root.addEventListener('keydown', ev => {
-        if (ev.key === 'ArrowLeft') {ev.preventDefault(); show(current - 1);}
-        if (ev.key === 'ArrowRight') {ev.preventDefault(); show(current + 1);}
+    raiz.addEventListener('mouseenter', stop);
+    raiz.addEventListener('mouseleave', start);
+    raiz.addEventListener('focusin', stop);
+    raiz.addEventListener('focusout', event => {if (!raiz.contains(event.relatedTarget)) start();});
+    raiz.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft') {event.preventDefault(); show(current - 1);}
+        if (event.key === 'ArrowRight') {event.preventDefault(); show(current + 1);}
     });
-    document.addEventListener('visibilitychange', start);
-    if (typeof motion.addEventListener === 'function') motion.addEventListener('change', start);
+    document.addEventListener('visibilitychange', () => document.hidden ? stop() : start());
+    if (typeof reducedMotion.addEventListener === 'function') reducedMotion.addEventListener('change', start);
     show(0);
     start();
 })();

@@ -1,169 +1,175 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const STORAGE_KEY = "aegisprobe_usuarios";
+import { supabase, mensajeConfiguracion } from "./supabase-client.js";
 
-    const getUsuarios = () => {
-        try {
-            return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-        } catch (error) {
-            return [];
-        }
-    };
+// Registro y acceso reales. Las contraseñas NUNCA se guardan en localStorage.
+// Supabase Auth realiza la comprobación en el servidor.
+const MIN_CLAVE = 6;
+const $ = id => document.getElementById(id);
+const normalizarCorreo = valor => valor.trim().toLowerCase();
+const correoValido = valor => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(valor);
+const redireccionConfirmacion = new URL("confirmacion-correo.html", window.location.href).href;
+let correoPendiente = "";
 
-    const saveUsuarios = (usuarios) => {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(usuarios));
-    };
+function mensaje(elemento, texto, tipo = "error") {
+    if (!elemento) return;
+    elemento.textContent = texto;
+    elemento.hidden = !texto;
+    elemento.classList.remove("is-success", "is-error");
+    if (texto) elemento.classList.add(tipo === "error" ? "is-error" : "is-success");
+}
 
-    const normalizarCorreo = (correo) => correo.trim().toLowerCase();
-
-    const correoValido = (correo) => {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo);
-    };
-
-    const mostrarMensaje = (elemento, texto, tipo = "success") => {
-        if (!elemento) return;
-
-        elemento.textContent = texto;
-        elemento.hidden = false;
-        elemento.classList.remove("is-success", "is-error");
-        elemento.classList.add(tipo === "error" ? "is-error" : "is-success");
-        elemento.focus();
-    };
-
-    const ocultarMensaje = (elemento) => {
-        if (!elemento) return;
-
-        elemento.textContent = "";
-        elemento.hidden = true;
-        elemento.classList.remove("is-success", "is-error");
-    };
-
-    const abrirModal = (modal) => {
-        if (!modal) return;
-
-        modal.hidden = false;
-        document.body.classList.add("modal-open");
-
-        const botonCerrar = modal.querySelector("[data-modal-close]");
-        if (botonCerrar) {
-            botonCerrar.focus();
-        }
-    };
-
-    const cerrarModal = (modal) => {
-        if (!modal) return;
-
-        modal.hidden = true;
-        document.body.classList.remove("modal-open");
-    };
-
-    document.querySelectorAll(".usuarios-modal").forEach((modal) => {
-        modal.addEventListener("click", (event) => {
-            if (event.target === modal || event.target.matches("[data-modal-close]")) {
-                cerrarModal(modal);
-            }
-        });
-    });
-
-    document.addEventListener("keydown", (event) => {
-        if (event.key !== "Escape") return;
-
-        document.querySelectorAll(".usuarios-modal:not([hidden])").forEach((modal) => {
-            cerrarModal(modal);
-        });
-    });
-
-    const formRegistro = document.getElementById("form-registro");
-    const mensajeRegistro = document.getElementById("mensaje-registro");
-    const modalRegistro = document.getElementById("modal-registro-exitoso");
-
-    if (formRegistro) {
-        formRegistro.addEventListener("submit", (event) => {
-            event.preventDefault();
-            ocultarMensaje(mensajeRegistro);
-
-            const nombre = document.getElementById("registro-nombre").value.trim();
-            const correo = normalizarCorreo(document.getElementById("registro-correo").value);
-            const clave = document.getElementById("registro-clave").value.trim();
-            const confirmar = document.getElementById("registro-confirmar").value.trim();
-
-            if (!nombre || !correo || !clave || !confirmar) {
-                mostrarMensaje(mensajeRegistro, "Completa todos los campos para registrar la cuenta.", "error");
-                return;
-            }
-
-            if (!correoValido(correo)) {
-                mostrarMensaje(mensajeRegistro, "Ingresa un correo electrónico válido.", "error");
-                return;
-            }
-
-            if (clave.length < 6) {
-                mostrarMensaje(mensajeRegistro, "La contraseña debe tener como mínimo 6 caracteres.", "error");
-                return;
-            }
-
-            if (clave !== confirmar) {
-                mostrarMensaje(mensajeRegistro, "Las contraseñas no coinciden.", "error");
-                return;
-            }
-
-            const usuarios = getUsuarios();
-            const yaExiste = usuarios.some((usuario) => usuario.correo === correo);
-
-            if (yaExiste) {
-                mostrarMensaje(mensajeRegistro, "Este correo ya está registrado. Puedes iniciar sesión.", "error");
-                return;
-            }
-
-            usuarios.push({
-                nombre,
-                correo,
-                clave
-            });
-
-            saveUsuarios(usuarios);
-            formRegistro.reset();
-
-            mostrarMensaje(mensajeRegistro, "Registro exitoso. Tu cuenta fue creada correctamente.", "success");
-            abrirModal(modalRegistro);
-        });
+function errorLegible(error) {
+    const codigo = error?.code || "";
+    const texto = (error?.message || "").toLowerCase();
+    if (codigo === "email_not_confirmed" || texto.includes("email not confirmed")) {
+        return "Primero debes confirmar tu correo. Busca el mensaje de Supabase y abre el enlace de confirmación.";
     }
-
-    const formLogin = document.getElementById("form-login");
-    const mensajeLogin = document.getElementById("mensaje-login");
-    const modalLogin = document.getElementById("modal-login-exitoso");
-
-    if (formLogin) {
-        formLogin.addEventListener("submit", (event) => {
-            event.preventDefault();
-            ocultarMensaje(mensajeLogin);
-
-            const correo = normalizarCorreo(document.getElementById("login-correo").value);
-            const clave = document.getElementById("login-clave").value.trim();
-
-            if (!correo || !clave) {
-                mostrarMensaje(mensajeLogin, "Ingresa tu correo y contraseña para iniciar sesión.", "error");
-                return;
-            }
-
-            if (!correoValido(correo)) {
-                mostrarMensaje(mensajeLogin, "Ingresa un correo electrónico válido.", "error");
-                return;
-            }
-
-            const usuarios = getUsuarios();
-            const usuarioEncontrado = usuarios.find((usuario) => {
-                return usuario.correo === correo && usuario.clave === clave;
-            });
-
-            if (!usuarioEncontrado) {
-                mostrarMensaje(mensajeLogin, "Correo o contraseña incorrectos. Registra una cuenta primero.", "error");
-                return;
-            }
-
-            formLogin.reset();
-
-            mostrarMensaje(mensajeLogin, `Inicio de sesión exitoso. Bienvenido, ${usuarioEncontrado.nombre}.`, "success");
-            abrirModal(modalLogin);
-        });
+    if (codigo === "invalid_credentials" || texto.includes("invalid login credentials")) {
+        return "El correo o la contraseña no son correctos.";
     }
+    if (codigo === "email_address_not_authorized" || texto.includes("email address not authorized")) {
+        return "Supabase no puede enviar correos a esta dirección con su servicio SMTP de prueba. Configura un proveedor SMTP propio en Supabase.";
+    }
+    if (codigo.includes("rate_limit") || codigo === "over_email_send_rate_limit" || error?.status === 429) {
+        return "Se superó el límite temporal de solicitudes o correos. Espera antes de volver a intentarlo.";
+    }
+    if (codigo === "weak_password" || texto.includes("password should be")) {
+        return "Supabase rechazó la contraseña. Revisa la longitud y los requisitos definidos en Authentication → Security and Protection.";
+    }
+    if (codigo === "signup_disabled") return "El registro de nuevos usuarios está deshabilitado en Supabase.";
+    if (codigo === "user_already_exists" || texto.includes("already registered")) return "No se puede crear esta cuenta. Prueba iniciar sesión o recuperar tu acceso.";
+    return "No se completó la operación. Comprueba la conexión y revisa los registros de Authentication en Supabase.";
+}
+
+function mostrarModal(modal) {
+    if (!modal) return;
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+    modal.querySelector("[data-modal-close]")?.focus();
+}
+function cerrarModal(modal) {
+    modal.hidden = true;
+    document.body.classList.remove("modal-open");
+}
+document.querySelectorAll(".usuarios-modal").forEach(modal => {
+    modal.addEventListener("click", event => {
+        if (event.target === modal || event.target.closest("[data-modal-close]")) cerrarModal(modal);
+    });
 });
+document.addEventListener("keydown", event => {
+    if (event.key === "Escape") document.querySelectorAll(".usuarios-modal:not([hidden])").forEach(cerrarModal);
+});
+
+function comprobarConfiguracion(objetivo) {
+    if (supabase) return true;
+    mensaje(objetivo, mensajeConfiguracion);
+    return false;
+}
+
+const registro = $("form-registro");
+if (registro) {
+    const estado = $("mensaje-registro");
+    const boton = $("boton-registro-demo");
+    const zonaReenvio = $("zona-reenvio");
+    registro.addEventListener("submit", async event => {
+        event.preventDefault();
+        mensaje(estado, "");
+        if (!registro.reportValidity() || !comprobarConfiguracion(estado)) return;
+        const nombre = $("registro-nombre").value.trim();
+        const correo = normalizarCorreo($("registro-correo").value);
+        const clave = $("registro-clave").value; // No modificar ni recortar contraseñas.
+        const confirmar = $("registro-confirmar").value;
+        if (nombre.length < 2 || !correoValido(correo)) {
+            mensaje(estado, "Escribe un nombre de al menos 2 caracteres y un correo válido."); return;
+        }
+        if (clave.length < MIN_CLAVE) {
+            mensaje(estado, `La contraseña debe tener al menos ${MIN_CLAVE} caracteres.`); return;
+        }
+        if (clave !== confirmar) {
+            mensaje(estado, "Las contraseñas no coinciden."); return;
+        }
+        boton.disabled = true;
+        boton.setAttribute("aria-busy", "true");
+        try {
+            const { data, error } = await supabase.auth.signUp({
+                email: correo,
+                password: clave,
+                options: { data: { nombre }, emailRedirectTo: redireccionConfirmacion }
+            });
+            if (error) throw error;
+            correoPendiente = correo;
+            registro.reset();
+            if (data?.session) {
+                // Si Auth no exige confirmación, el usuario recibe sesión inmediatamente.
+                $("modal-registro-titulo").textContent = "Cuenta creada";
+                $("modal-registro-texto").textContent = "La cuenta se registró, pero Supabase permitió acceder sin verificar el correo. Activa Confirm Email en Authentication si quieres exigir confirmación.";
+                zonaReenvio.hidden = true;
+                mensaje(estado, "Cuenta creada. Activa Confirm Email en Supabase para exigir verificación.", "success");
+            } else {
+                $("modal-registro-titulo").textContent = "Revisa tu correo electrónico";
+                $("modal-registro-texto").textContent = "Si esta dirección puede registrarse, recibirás un correo de confirmación. Abre el enlace antes de iniciar sesión.";
+                zonaReenvio.hidden = false;
+                mensaje(estado, "Solicitud recibida. Revisa tu correo (incluido spam) y confirma la dirección antes de iniciar sesión.", "success");
+            }
+            mostrarModal($("modal-registro-exitoso"));
+        } catch (error) {
+            console.error("Error de registro Supabase:", error);
+            mensaje(estado, errorLegible(error));
+        } finally {
+            boton.disabled = false;
+            boton.removeAttribute("aria-busy");
+        }
+    });
+
+    $("reenviar-confirmacion")?.addEventListener("click", async () => {
+        if (!comprobarConfiguracion(estado)) return;
+        const botonReenvio = $("reenviar-confirmacion");
+        const correo = correoPendiente || normalizarCorreo($("registro-correo").value);
+        if (!correoValido(correo)) { mensaje(estado, "Vuelve a introducir un correo válido."); return; }
+        botonReenvio.disabled = true;
+        try {
+            const { error } = await supabase.auth.resend({
+                type: "signup", email: correo,
+                options: { emailRedirectTo: redireccionConfirmacion }
+            });
+            if (error) throw error;
+            mensaje(estado, "Si esta dirección tiene una confirmación pendiente, se solicitó un nuevo correo. Espera antes de reenviar.", "success");
+        } catch (error) {
+            console.error("Error al reenviar confirmación:", error);
+            mensaje(estado, errorLegible(error));
+        } finally {
+            botonReenvio.disabled = false;
+        }
+    });
+}
+
+const login = $("form-login");
+if (login) {
+    const estado = $("mensaje-login");
+    const boton = $("boton-login-demo");
+    login.addEventListener("submit", async event => {
+        event.preventDefault();
+        mensaje(estado, "");
+        if (!login.reportValidity() || !comprobarConfiguracion(estado)) return;
+        const correo = normalizarCorreo($("login-correo").value);
+        const clave = $("login-clave").value;
+        if (!correoValido(correo) || clave.length < MIN_CLAVE) {
+            mensaje(estado, "Introduce un correo válido y una contraseña de al menos 6 caracteres."); return;
+        }
+        boton.disabled = true;
+        boton.setAttribute("aria-busy", "true");
+        try {
+            const { data, error } = await supabase.auth.signInWithPassword({ email: correo, password: clave });
+            if (error) throw error;
+            if (!data?.session) throw new Error("No se inició una sesión válida.");
+            login.reset();
+            mensaje(estado, "Inicio de sesión validado por Supabase.", "success");
+            mostrarModal($("modal-login-exitoso"));
+        } catch (error) {
+            console.error("Error al iniciar sesión Supabase:", error);
+            mensaje(estado, errorLegible(error));
+        } finally {
+            boton.disabled = false;
+            boton.removeAttribute("aria-busy");
+        }
+    });
+}

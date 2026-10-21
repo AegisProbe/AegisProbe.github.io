@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmar correo | AegisProbe</title>
+  <link rel="stylesheet" href="css/usuarios.css">
+</head>
+<body class="usuarios-page" id="pagina-confirmacion-correo">
+  <header class="usuarios-header">
+    <a href="index.html" class="usuarios-brand" aria-label="Volver al inicio de AegisProbe">
+      <img class="usuarios-symbol" src="img/aegisprobe-logo.png" width="55" height="55" alt="">
+      <span>Aegis<span class="usuarios-accent">Probe</span></span>
+    </a>
+    <nav class="usuarios-nav" aria-label="Navegación">
+      <a href="index.html">Inicio</a>
+      <a href="login.html">Iniciar sesión</a>
+      <a class="usuarios-nav-cta" href="registro.html">Registrarse</a>
+    </nav>
+  </header>
+  <main class="usuarios-confirmacion-main">
+    <section class="usuarios-card usuarios-confirmacion-card" aria-labelledby="titulo-confirmacion-email">
+      <div class="usuarios-modal-icon" aria-hidden="true">✉</div>
+      <h1 id="titulo-confirmacion-email">Comprobando tu confirmación…</h1>
+      <p class="usuarios-subtitle" id="detalle-confirmacion" role="status" aria-live="polite">Estamos verificando el enlace de Supabase.</p>
+      <a class="usuarios-modal-action" href="mi-cuenta.html" id="accion-confirmacion" hidden>Ir a mi cuenta</a>
+      <a class="usuarios-back" href="login.html">Volver a iniciar sesión</a>
+    </section>
+  </main>
+  <footer class="usuarios-footer">© 2026 AegisProbe · Pentesting &amp; Offensive Security</footer>
+  <script type="module" src="confirmacion-correo.js"></script>
+</body>
+</html>

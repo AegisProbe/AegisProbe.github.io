@@ -1,616 +1,1143 @@
 <!DOCTYPE html>
 
 <html lang="es">
-<head>
-<meta charset="utf-8"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>AegisProbe | Pentesting &amp; Offensive Security</title>
-<link href="css/estilo-formulario.css" rel="stylesheet"/>
-<link href="css/usuarios.css" rel="stylesheet"/>
-</head>
-<body id="pagina-inicio">
-<!-- CABECERA -->
-<header class="header" id="cabecera">
-<div class="header-inner">
-<a class="brand" href="#inicio" id="logo-principal">
-<img alt="" class="brand-logo" decoding="async" height="55" id="imagen-logo" src="img/aegisprobe-logo.png" width="55"></img>
-<span class="brand-name" id="nombre-marca">
-<span class="aegis">Aegis</span><span class="probe">Probe</span>
-</span>
-</a>
-<nav class="nav" id="menu-navegacion">
-<a href="#inicio" id="link-inicio">Inicio</a>
-<a href="#servicios" id="link-servicios">Servicios</a>
-<a href="#metodologia" id="link-metodologia">Metodología</a>
-<a href="#nosotros" id="link-nosotros">Nosotros</a>
-<a href="#contacto" id="link-contacto">Contacto</a>
-<a href="#solicitar-auditoria" id="link-solicitar-auditoria">Solicitar auditoría</a>
-<a class="nav-usuario" href="login.html" id="link-login">Iniciar sesión</a>
-<a class="nav-usuario nav-registro" href="registro.html" id="link-registro">Registrarse</a>
-</nav>
-</div>
-</header>
-<!-- INICIO -->
-<main id="inicio">
-<section class="hero" id="hero-inicio">
-<div class="hero-text" id="texto-hero">
-<span class="section-label" id="etiqueta-hero">
 
-                    PENTESTING &amp; OFFENSIVE SECURITY
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AegisProbe | Pentesting & Offensive Security</title>
+
+    <link rel="stylesheet" href="css/estilo-formulario.css">
+    <link rel="stylesheet" href="css/usuarios.css">
+
+</head>
+
+<body id="pagina-inicio">
+
+    <!-- CABECERA -->
+
+    <header class="header" id="cabecera">
+
+        <div class="header-inner">
+
+            <a href="#inicio" class="brand" id="logo-principal">
+
+                <div class="brand-logo" id="imagen-logo"></div>
+
+                <span class="brand-name" id="nombre-marca">
+
+                    <span class="aegis">Aegis</span><span class="probe">Probe</span>
 
                 </span>
-<h1 id="titulo-hero">
+
+            </a>
+
+            <nav class="nav" id="menu-navegacion">
+
+                <a href="#inicio" id="link-inicio">Inicio</a>
+
+                <a href="#servicios" id="link-servicios">Servicios</a>
+
+                <a href="#metodologia" id="link-metodologia">Metodología</a>
+
+                <a href="#nosotros" id="link-nosotros">Nosotros</a>
+
+                <a href="#contacto" id="link-contacto">Contacto</a>
+
+                <a href="#solicitar-auditoria" id="link-solicitar-auditoria">Solicitar auditoría</a>
+
+                <a href="login.html" class="nav-usuario" id="link-login">Iniciar sesión</a>
+                <a href="registro.html" class="nav-usuario nav-registro" id="link-registro">Registrarse</a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+    <!-- INICIO -->
+
+    <main id="inicio">
+
+        <section class="hero" id="hero-inicio">
+
+            <div class="hero-text" id="texto-hero">
+
+                <span class="section-label" id="etiqueta-hero">
+
+                    PENTESTING & OFFENSIVE SECURITY
+
+                </span>
+
+                <h1 id="titulo-hero">
 
                     Protegemos tu empresa antes de que ocurra un
 
                     <span>ataque</span>
-</h1>
-<p id="descripcion-hero">
+
+                </h1>
+
+                <p id="descripcion-hero">
 
                     En AegisProbe detectamos vulnerabilidades, analizamos riesgos
 
                     y fortalecemos la seguridad digital de tu organización.
 
                 </p>
-<div class="hero-buttons" id="botones-hero">
-<a class="btn btn-primary" href="#solicitar-auditoria" id="boton-hero-auditoria">
+
+                <div class="hero-buttons" id="botones-hero">
+
+                    <a href="#solicitar-auditoria" class="btn btn-primary" id="boton-hero-auditoria">
 
                         Solicitar auditoría
 
                     </a>
-<a class="btn btn-secondary" href="#servicios" id="boton-hero-servicios">
+
+                    <a href="#servicios" class="btn btn-secondary" id="boton-hero-servicios">
 
                         Ver servicios
 
                     </a>
-</div>
-</div>
-<div class="hero-graphic" id="grafico-hero">
-<img alt="Logo de AegisProbe" class="hero-logo" id="logo-hero" src="img/aegisprobe-logo.png"/>
-</div>
-</section>
-<!-- FRANJA DE CONFIANZA -->
-<section class="trust-bar" id="franja-confianza">
-<div class="trust-items" id="items-confianza">
-<span>OSCP</span>
-<span>CEH</span>
-<span>ISO 27001</span>
-<span>OWASP</span>
-<span>NIST</span>
-</div>
-</section>
-<!-- SERVICIOS DESTACADOS -->
-<section class="section compact-section" id="servicios-destacados">
-<h2 class="section-title" id="titulo-servicios-destacados">
+
+                </div>
+
+            </div>
+
+            <div class="hero-graphic" id="grafico-hero">
+
+                <img
+
+                    src="img/aegisprobe-logo.png"
+
+                    alt="Logo de AegisProbe"
+
+                    class="hero-logo"
+
+                    id="logo-hero"
+
+                >
+
+            </div>
+
+        </section>
+
+        <!-- FRANJA DE CONFIANZA -->
+
+        <section class="trust-bar" id="franja-confianza">
+
+            <div class="trust-items" id="items-confianza">
+
+                <span>OSCP</span>
+
+                <span>CEH</span>
+
+                <span>ISO 27001</span>
+
+                <span>OWASP</span>
+
+                <span>NIST</span>
+
+            </div>
+
+        </section>
+
+        <!-- SERVICIOS DESTACADOS -->
+
+        <section class="section compact-section" id="servicios-destacados">
+
+            <h2 class="section-title" id="titulo-servicios-destacados">
 
                 Servicios <span>principales</span>
-</h2>
-<p class="section-description" id="descripcion-servicios-destacados">
+
+            </h2>
+
+            <p class="section-description" id="descripcion-servicios-destacados">
 
                 Soluciones de seguridad ofensiva para detectar fallos antes que un atacante.
 
             </p>
-<div class="services-grid" id="grid-servicios-destacados">
-<div class="service-card" id="servicio-destacado-web">
-<div class="service-icon">🌐</div>
-<h3>Pentesting Web</h3>
-<p>Analizamos aplicaciones web en busca de vulnerabilidades críticas.</p>
-<a href="#servicios">Ver detalle →</a>
-</div>
-<div class="service-card" id="servicio-destacado-movil">
-<div class="service-icon">📱</div>
-<h3>Pentesting Móvil</h3>
-<p>Evaluamos aplicaciones móviles, APIs y posibles fallos de seguridad.</p>
-<a href="#servicios">Ver detalle →</a>
-</div>
-<div class="service-card" id="servicio-destacado-red">
-<div class="service-icon">🖧</div>
-<h3>Infraestructura</h3>
-<p>Revisamos redes, servidores y configuraciones internas.</p>
-<a href="#servicios">Ver detalle →</a>
-</div>
-</div>
-</section>
-<!-- ESTADÍSTICAS -->
-<section class="section compact-section" id="estadisticas">
-<h2 class="section-title" id="titulo-estadisticas">
+
+            <div class="services-grid" id="grid-servicios-destacados">
+
+                <div class="service-card" id="servicio-destacado-web">
+
+                    <div class="service-icon">🌐</div>
+
+                    <h3>Pentesting Web</h3>
+
+                    <p>Analizamos aplicaciones web en busca de vulnerabilidades críticas.</p>
+
+                    <a href="#servicios">Ver detalle →</a>
+
+                </div>
+
+                <div class="service-card" id="servicio-destacado-movil">
+
+                    <div class="service-icon">📱</div>
+
+                    <h3>Pentesting Móvil</h3>
+
+                    <p>Evaluamos aplicaciones móviles, APIs y posibles fallos de seguridad.</p>
+
+                    <a href="#servicios">Ver detalle →</a>
+
+                </div>
+
+                <div class="service-card" id="servicio-destacado-red">
+
+                    <div class="service-icon">🖧</div>
+
+                    <h3>Infraestructura</h3>
+
+                    <p>Revisamos redes, servidores y configuraciones internas.</p>
+
+                    <a href="#servicios">Ver detalle →</a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ESTADÍSTICAS -->
+
+        <section class="section compact-section" id="estadisticas">
+
+            <h2 class="section-title" id="titulo-estadisticas">
 
                 Nuestra experiencia <span>en el ámbito</span>
-</h2>
-<p class="section-description" id="descripcion-estadisticas">
+
+            </h2>
+
+            <p class="section-description" id="descripcion-estadisticas">
 
                 Resultados obtenidos en auditorías, proyectos de seguridad ofensiva y acompañamiento a organizaciones que buscan reducir riesgos reales.
 
             </p>
-<div class="stats" id="grid-estadisticas">
-<div class="stat-card" id="estadistica-vulnerabilidades">
-<h3>+500</h3>
-<p><strong>Vulnerabilidades halladas</strong></p>
-<span>Identificadas en aplicaciones web, APIs, redes internas y entornos empresariales antes de que pudieran ser explotadas.</span>
-</div>
-<div class="stat-card" id="estadistica-proyectos">
-<h3>+120</h3>
-<p><strong>Proyectos realizados</strong></p>
-<span>Auditorías, pruebas de penetración, revisiones de cumplimiento y simulaciones controladas de ataque.</span>
-</div>
-<div class="stat-card" id="estadistica-experiencia">
-<h3>+5</h3>
-<p><strong>Años de experiencia</strong></p>
-<span>Trabajo continuo en ciberseguridad ofensiva, análisis de riesgo, reporte técnico y mejora de controles.</span>
-</div>
-</div>
-</section>
-<!-- TESTIMONIOS -->
-<section class="section compact-section" id="testimonios">
-<h2 class="section-title" id="titulo-testimonios">
+
+            <div class="stats" id="grid-estadisticas">
+
+                <div class="stat-card" id="estadistica-vulnerabilidades">
+
+                    <h3>+500</h3>
+
+                    <p><strong>Vulnerabilidades halladas</strong></p>
+
+                    <span>Identificadas en aplicaciones web, APIs, redes internas y entornos empresariales antes de que pudieran ser explotadas.</span>
+
+                </div>
+
+                <div class="stat-card" id="estadistica-proyectos">
+
+                    <h3>+120</h3>
+
+                    <p><strong>Proyectos realizados</strong></p>
+
+                    <span>Auditorías, pruebas de penetración, revisiones de cumplimiento y simulaciones controladas de ataque.</span>
+
+                </div>
+
+                <div class="stat-card" id="estadistica-experiencia">
+
+                    <h3>+5</h3>
+
+                    <p><strong>Años de experiencia</strong></p>
+
+                    <span>Trabajo continuo en ciberseguridad ofensiva, análisis de riesgo, reporte técnico y mejora de controles.</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- TESTIMONIOS -->
+
+        <section class="section compact-section" id="testimonios">
+
+            <h2 class="section-title" id="titulo-testimonios">
 
                 Clientes que confían en <span>AegisProbe</span>
-</h2>
-<p class="section-description" id="descripcion-testimonios">
+
+            </h2>
+
+            <p class="section-description" id="descripcion-testimonios">
 
                 Carrusel con 12 reseñas de muestra, organizadas para mostrar distintos tipos de clientes y proyectos de seguridad.
 
             </p>
-<div aria-label="Carrusel de reseñas de clientes" class="testimonials-carousel" id="carrusel-testimonios">
-<button aria-label="Ver reseña anterior" class="carousel-btn carousel-prev" id="testimonio-anterior" type="button">‹</button>
-<div class="testimonials-viewport">
-<div class="testimonials-track" id="grid-testimonios">
-<article class="testimonial-card is-active" id="testimonio-uno">
-<div class="stars">★★★★★</div>
-<p>“El equipo detectó riesgos que no habíamos considerado y nos explicó el impacto con claridad.”</p>
-<strong>María Fernanda López</strong>
-<span>Cliente empresarial · Gerente de TI · Grupo Andino Retail</span>
-</article>
-<article class="testimonial-card" id="testimonio-dos">
-<div class="stars">★★★★★</div>
-<p>“El reporte fue claro, directo y fácil de aplicar para nuestro equipo de desarrollo.”</p>
-<strong>Carlos Mendoza</strong>
-<span>Cliente tecnológico · Líder DevOps · NovaTech Solutions</span>
-</article>
-<article class="testimonial-card" id="testimonio-tres">
-<div class="stars">★★★★★</div>
-<p>“Nos ayudaron a priorizar vulnerabilidades críticas sin detener la operación diaria.”</p>
-<strong>Lucía Salazar</strong>
-<span>Cliente financiero · Jefa de Seguridad · FinanzaPlus</span>
-</article>
-<article class="testimonial-card" id="testimonio-cuatro">
-<div class="stars">★★★★★</div>
-<p>“La prueba de intrusión web nos permitió corregir fallos antes del lanzamiento público.”</p>
-<strong>Diego Herrera</strong>
-<span>Startup SaaS · CTO · CloudMetric</span>
-</article>
-<article class="testimonial-card" id="testimonio-cinco">
-<div class="stars">★★★★★</div>
-<p>“La simulación de phishing fue útil para reforzar la capacitación interna del personal.”</p>
-<strong>Ana Torres</strong>
-<span>Cliente educativo · Coordinadora TI · Instituto Horizonte</span>
-</article>
-<article class="testimonial-card" id="testimonio-seis">
-<div class="stars">★★★★★</div>
-<p>“Recibimos evidencia técnica, explicación ejecutiva y recomendaciones aplicables.”</p>
-<strong>Javier Ríos</strong>
-<span>Cliente industrial · Responsable de Infraestructura · MetalSur</span>
-</article>
-<article class="testimonial-card" id="testimonio-siete">
-<div class="stars">★★★★★</div>
-<p>“El acompañamiento posterior nos ayudó a validar que las correcciones funcionaran.”</p>
-<strong>Paola Núñez</strong>
-<span>Cliente salud · Directora de Sistemas · Clínica San Gabriel</span>
-</article>
-<article class="testimonial-card" id="testimonio-ocho">
-<div class="stars">★★★★★</div>
-<p>“La auditoría de red identificó servicios expuestos que no estaban documentados.”</p>
-<strong>Roberto Castillo</strong>
-<span>Cliente logística · Administrador de Redes · Rutas del Pacífico</span>
-</article>
-<article class="testimonial-card" id="testimonio-nueve">
-<div class="stars">★★★★★</div>
-<p>“Nos gustó que separaran hallazgos técnicos de riesgos de negocio.”</p>
-<strong>Valeria Paredes</strong>
-<span>Cliente gubernamental · Analista de Riesgos · Municipalidad Digital</span>
-</article>
-<article class="testimonial-card" id="testimonio-diez">
-<div class="stars">★★★★★</div>
-<p>“El equipo mantuvo comunicación constante y respetó el alcance autorizado.”</p>
-<strong>Andrés Villanueva</strong>
-<span>Cliente legal · Socio de Tecnología · LexData Consultores</span>
-</article>
-<article class="testimonial-card" id="testimonio-once">
-<div class="stars">★★★★★</div>
-<p>“La revisión de nuestra API nos ayudó a cerrar brechas antes de integrarla con nuevos socios.”</p>
-<strong>Sofía Ramírez</strong>
-<span>Cliente fintech · Product Owner · PayCore Latam</span>
-</article>
-<article class="testimonial-card" id="testimonio-doce">
-<div class="stars">★★★★★</div>
-<p>“Ordenaron los hallazgos por prioridad y dejaron una ruta clara para mejorar nuestros controles.”</p>
-<strong>Miguel Arce</strong>
-<span>Cliente corporativo · Oficial de Cumplimiento · SegurData Perú</span>
-</article>
-</div>
-</div>
-<button aria-label="Ver reseña siguiente" class="carousel-btn carousel-next" id="testimonio-siguiente" type="button">›</button>
-<div aria-label="Indicadores del carrusel" class="carousel-dots" id="puntos-testimonios"></div>
-</div>
-</section>
-<!-- CTA FINAL -->
-<section class="section compact-section" id="cta-final">
-<div class="cta-banner" id="banner-cta">
-<h2>¿Tu empresa está realmente protegida?</h2>
-<p>
+
+            <div class="testimonials-carousel" id="carrusel-testimonios" aria-label="Carrusel de reseñas de clientes">
+
+                <button class="carousel-btn carousel-prev" id="testimonio-anterior" type="button" aria-label="Ver reseña anterior">‹</button>
+
+                <div class="testimonials-viewport">
+
+                    <div class="testimonials-track" id="grid-testimonios">
+
+                        <article class="testimonial-card is-active" id="testimonio-uno">
+
+                            <div class="stars">★★★★★</div>
+
+                            <p>“El equipo detectó riesgos que no habíamos considerado y nos explicó el impacto con claridad.”</p>
+
+                            <strong>María Fernanda López</strong>
+
+                            <span>Cliente empresarial · Gerente de TI · Grupo Andino Retail</span>
+
+                        </article>
+
+                        <article class="testimonial-card" id="testimonio-dos">
+
+                            <div class="stars">★★★★★</div>
+
+                            <p>“El reporte fue claro, directo y fácil de aplicar para nuestro equipo de desarrollo.”</p>
+
+                            <strong>Carlos Mendoza</strong>
+
+                            <span>Cliente tecnológico · Líder DevOps · NovaTech Solutions</span>
+
+                        </article>
+
+                        <article class="testimonial-card" id="testimonio-tres">
+
+                            <div class="stars">★★★★★</div>
+
+                            <p>“Nos ayudaron a priorizar vulnerabilidades críticas sin detener la operación diaria.”</p>
+
+                            <strong>Lucía Salazar</strong>
+
+                            <span>Cliente financiero · Jefa de Seguridad · FinanzaPlus</span>
+
+                        </article>
+
+                        <article class="testimonial-card" id="testimonio-cuatro">
+
+                            <div class="stars">★★★★★</div>
+
+                            <p>“La prueba de intrusión web nos permitió corregir fallos antes del lanzamiento público.”</p>
+
+                            <strong>Diego Herrera</strong>
+
+                            <span>Startup SaaS · CTO · CloudMetric</span>
+
+                        </article>
+
+                        <article class="testimonial-card" id="testimonio-cinco">
+
+                            <div class="stars">★★★★★</div>
+
+                            <p>“La simulación de phishing fue útil para reforzar la capacitación interna del personal.”</p>
+
+                            <strong>Ana Torres</strong>
+
+                            <span>Cliente educativo · Coordinadora TI · Instituto Horizonte</span>
+
+                        </article>
+
+                        <article class="testimonial-card" id="testimonio-seis">
+
+                            <div class="stars">★★★★★</div>
+
+                            <p>“Recibimos evidencia técnica, explicación ejecutiva y recomendaciones aplicables.”</p>
+
+                            <strong>Javier Ríos</strong>
+
+                            <span>Cliente industrial · Responsable de Infraestructura · MetalSur</span>
+
+                        </article>
+
+                        <article class="testimonial-card" id="testimonio-siete">
+
+                            <div class="stars">★★★★★</div>
+
+                            <p>“El acompañamiento posterior nos ayudó a validar que las correcciones funcionaran.”</p>
+
+                            <strong>Paola Núñez</strong>
+
+                            <span>Cliente salud · Directora de Sistemas · Clínica San Gabriel</span>
+
+                        </article>
+
+                        <article class="testimonial-card" id="testimonio-ocho">
+
+                            <div class="stars">★★★★★</div>
+
+                            <p>“La auditoría de red identificó servicios expuestos que no estaban documentados.”</p>
+
+                            <strong>Roberto Castillo</strong>
+
+                            <span>Cliente logística · Administrador de Redes · Rutas del Pacífico</span>
+
+                        </article>
+
+                        <article class="testimonial-card" id="testimonio-nueve">
+
+                            <div class="stars">★★★★★</div>
+
+                            <p>“Nos gustó que separaran hallazgos técnicos de riesgos de negocio.”</p>
+
+                            <strong>Valeria Paredes</strong>
+
+                            <span>Cliente gubernamental · Analista de Riesgos · Municipalidad Digital</span>
+
+                        </article>
+
+                        <article class="testimonial-card" id="testimonio-diez">
+
+                            <div class="stars">★★★★★</div>
+
+                            <p>“El equipo mantuvo comunicación constante y respetó el alcance autorizado.”</p>
+
+                            <strong>Andrés Villanueva</strong>
+
+                            <span>Cliente legal · Socio de Tecnología · LexData Consultores</span>
+
+                        </article>
+
+                        <article class="testimonial-card" id="testimonio-once">
+
+                            <div class="stars">★★★★★</div>
+
+                            <p>“La revisión de nuestra API nos ayudó a cerrar brechas antes de integrarla con nuevos socios.”</p>
+
+                            <strong>Sofía Ramírez</strong>
+
+                            <span>Cliente fintech · Product Owner · PayCore Latam</span>
+
+                        </article>
+
+                        <article class="testimonial-card" id="testimonio-doce">
+
+                            <div class="stars">★★★★★</div>
+
+                            <p>“Ordenaron los hallazgos por prioridad y dejaron una ruta clara para mejorar nuestros controles.”</p>
+
+                            <strong>Miguel Arce</strong>
+
+                            <span>Cliente corporativo · Oficial de Cumplimiento · SegurData Perú</span>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+                <button class="carousel-btn carousel-next" id="testimonio-siguiente" type="button" aria-label="Ver reseña siguiente">›</button>
+
+                <div class="carousel-dots" id="puntos-testimonios" aria-label="Indicadores del carrusel"></div>
+
+            </div>
+
+        </section>
+
+        <!-- CTA FINAL -->
+
+        <section class="section compact-section" id="cta-final">
+
+            <div class="cta-banner" id="banner-cta">
+
+                <h2>¿Tu empresa está realmente protegida?</h2>
+
+                <p>
 
                     Solicita una auditoría y descubre tus vulnerabilidades
 
                     antes que un atacante.
 
                 </p>
-<a class="btn btn-primary" href="#solicitar-auditoria">
+
+                <a href="#solicitar-auditoria" class="btn btn-primary">
 
                     Solicitar auditoría
 
                 </a>
-</div>
-</section>
-</main>
-<!-- SERVICIOS -->
-<section class="page-hero corporate-banner" id="servicios">
-<h1>Servicios de ciberseguridad</h1>
-<p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- SERVICIOS -->
+
+    <section class="page-hero" id="servicios">
+
+        <h1>Servicios de ciberseguridad</h1>
+
+        <p>
 
             Evaluamos tus sistemas mediante pruebas controladas para detectar
 
             vulnerabilidades y fortalecer tu protección digital.
 
         </p>
-</section>
-<section class="section compact-section" id="seccion-servicios">
-<div class="services-grid" id="grid-servicios">
-<div class="service-card" id="servicio-web">
-<div class="service-icon">🌐</div>
-<h3>Pentesting Web</h3>
-<p>Pruebas de seguridad para sitios web, paneles administrativos y APIs.</p>
-<ul>
-<li>OWASP Top 10</li>
-<li>Pruebas de autenticación</li>
-<li>Reporte técnico</li>
-</ul>
-<a href="#solicitar-auditoria">Solicitar servicio →</a>
-</div>
-<div class="service-card" id="servicio-movil">
-<div class="service-icon">📱</div>
-<h3>Pentesting Móvil</h3>
-<p>Análisis de aplicaciones Android o iOS para detectar fallas de seguridad.</p>
-<ul>
-<li>Análisis de permisos</li>
-<li>Revisión de APIs</li>
-<li>Pruebas de almacenamiento</li>
-</ul>
-<a href="#solicitar-auditoria">Solicitar servicio →</a>
-</div>
-<div class="service-card" id="servicio-infraestructura">
-<div class="service-icon">🖧</div>
-<h3>Infraestructura y Red</h3>
-<p>Evaluación de servidores, redes internas, puertos y configuraciones.</p>
-<ul>
-<li>Escaneo de red</li>
-<li>Validación de servicios</li>
-<li>Riesgos internos</li>
-</ul>
-<a href="#solicitar-auditoria">Solicitar servicio →</a>
-</div>
-<div class="service-card" id="servicio-red-team">
-<div class="service-icon">🎯</div>
-<h3>Red Team</h3>
-<p>Simulación avanzada de ataques reales contra la organización.</p>
-<ul>
-<li>Reconocimiento</li>
-<li>Explotación controlada</li>
-<li>Reporte ejecutivo</li>
-</ul>
-<a href="#solicitar-auditoria">Solicitar servicio →</a>
-</div>
-<div class="service-card" id="servicio-auditoria">
-<div class="service-icon">📋</div>
-<h3>Auditoría de Cumplimiento</h3>
-<p>Revisión de controles, políticas y buenas prácticas de seguridad.</p>
-<ul>
-<li>Revisión documental</li>
-<li>Controles de seguridad</li>
-<li>Recomendaciones</li>
-</ul>
-<a href="#solicitar-auditoria">Solicitar servicio →</a>
-</div>
-<div class="service-card" id="servicio-ingenieria-social">
-<div class="service-icon">🧠</div>
-<h3>Ingeniería Social</h3>
-<p>Evaluación del factor humano ante intentos de engaño o phishing.</p>
-<ul>
-<li>Campañas simuladas</li>
-<li>Concientización</li>
-<li>Resultados medibles</li>
-</ul>
-<a href="#solicitar-auditoria">Solicitar servicio →</a>
-</div>
-</div>
-</section>
-<!-- COMPARATIVA -->
-<section class="section compact-section" id="tipos-evaluacion">
-<h2 class="section-title">
+
+    </section>
+
+    <section class="section compact-section" id="seccion-servicios">
+
+        <div class="services-grid" id="grid-servicios">
+
+            <div class="service-card" id="servicio-web">
+
+                <div class="service-icon">🌐</div>
+
+                <h3>Pentesting Web</h3>
+
+                <p>Pruebas de seguridad para sitios web, paneles administrativos y APIs.</p>
+
+                <ul>
+
+                    <li>OWASP Top 10</li>
+
+                    <li>Pruebas de autenticación</li>
+
+                    <li>Reporte técnico</li>
+
+                </ul>
+
+                <a href="#solicitar-auditoria">Solicitar servicio →</a>
+
+            </div>
+
+            <div class="service-card" id="servicio-movil">
+
+                <div class="service-icon">📱</div>
+
+                <h3>Pentesting Móvil</h3>
+
+                <p>Análisis de aplicaciones Android o iOS para detectar fallas de seguridad.</p>
+
+                <ul>
+
+                    <li>Análisis de permisos</li>
+
+                    <li>Revisión de APIs</li>
+
+                    <li>Pruebas de almacenamiento</li>
+
+                </ul>
+
+                <a href="#solicitar-auditoria">Solicitar servicio →</a>
+
+            </div>
+
+            <div class="service-card" id="servicio-infraestructura">
+
+                <div class="service-icon">🖧</div>
+
+                <h3>Infraestructura y Red</h3>
+
+                <p>Evaluación de servidores, redes internas, puertos y configuraciones.</p>
+
+                <ul>
+
+                    <li>Escaneo de red</li>
+
+                    <li>Validación de servicios</li>
+
+                    <li>Riesgos internos</li>
+
+                </ul>
+
+                <a href="#solicitar-auditoria">Solicitar servicio →</a>
+
+            </div>
+
+            <div class="service-card" id="servicio-red-team">
+
+                <div class="service-icon">🎯</div>
+
+                <h3>Red Team</h3>
+
+                <p>Simulación avanzada de ataques reales contra la organización.</p>
+
+                <ul>
+
+                    <li>Reconocimiento</li>
+
+                    <li>Explotación controlada</li>
+
+                    <li>Reporte ejecutivo</li>
+
+                </ul>
+
+                <a href="#solicitar-auditoria">Solicitar servicio →</a>
+
+            </div>
+
+            <div class="service-card" id="servicio-auditoria">
+
+                <div class="service-icon">📋</div>
+
+                <h3>Auditoría de Cumplimiento</h3>
+
+                <p>Revisión de controles, políticas y buenas prácticas de seguridad.</p>
+
+                <ul>
+
+                    <li>Revisión documental</li>
+
+                    <li>Controles de seguridad</li>
+
+                    <li>Recomendaciones</li>
+
+                </ul>
+
+                <a href="#solicitar-auditoria">Solicitar servicio →</a>
+
+            </div>
+
+            <div class="service-card" id="servicio-ingenieria-social">
+
+                <div class="service-icon">🧠</div>
+
+                <h3>Ingeniería Social</h3>
+
+                <p>Evaluación del factor humano ante intentos de engaño o phishing.</p>
+
+                <ul>
+
+                    <li>Campañas simuladas</li>
+
+                    <li>Concientización</li>
+
+                    <li>Resultados medibles</li>
+
+                </ul>
+
+                <a href="#solicitar-auditoria">Solicitar servicio →</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- COMPARATIVA -->
+
+    <section class="section compact-section" id="tipos-evaluacion">
+
+        <h2 class="section-title">
 
             Tipos de <span>evaluación</span>
-</h2>
-<p class="section-description">
+
+        </h2>
+
+        <p class="section-description">
 
             Elegimos el enfoque según el nivel de información disponible, el objetivo del cliente y el tipo de riesgo que se desea comprobar.
 
         </p>
-<div class="comparison" id="grid-comparacion">
-<div class="comparison-card" id="black-box">
-<h3>Black Box</h3>
-<p>Prueba sin información previa, simulando la perspectiva de un atacante externo que intenta descubrir servicios, tecnologías y puntos débiles desde cero.</p>
-<ul>
-<li>Ideal para medir exposición pública.</li>
-<li>Incluye reconocimiento, enumeración y validación controlada.</li>
-<li>Permite conocer qué podría encontrar un atacante real.</li>
-</ul>
-</div>
-<div class="comparison-card" id="grey-box">
-<h3>Grey Box</h3>
-<p>Evaluación con información parcial, como usuarios de prueba, diagramas generales o alcances definidos. Combina velocidad, realismo y profundidad técnica.</p>
-<ul>
-<li>Útil para aplicaciones con roles de usuario.</li>
-<li>Permite revisar autenticación, permisos y flujos críticos.</li>
-<li>Reduce tiempos sin perder contexto de seguridad.</li>
-</ul>
-</div>
-<div class="comparison-card" id="white-box">
-<h3>White Box</h3>
-<p>Prueba con acceso completo a documentación, arquitectura, configuraciones o código fuente para realizar un análisis profundo y orientado a corrección.</p>
-<ul>
-<li>Recomendado para auditorías internas o preproducción.</li>
-<li>Facilita encontrar errores lógicos y malas prácticas.</li>
-<li>Entrega recomendaciones precisas para desarrollo y TI.</li>
-</ul>
-</div>
-</div>
-</section>
-<!-- METODOLOGÍA -->
-<section class="page-hero corporate-banner" id="metodologia">
-<h1>Cómo trabajamos</h1>
-<p>
+
+        <div class="comparison" id="grid-comparacion">
+
+            <div class="comparison-card" id="black-box">
+
+                <h3>Black Box</h3>
+
+                <p>Prueba sin información previa, simulando la perspectiva de un atacante externo que intenta descubrir servicios, tecnologías y puntos débiles desde cero.</p>
+
+                <ul>
+
+                    <li>Ideal para medir exposición pública.</li>
+
+                    <li>Incluye reconocimiento, enumeración y validación controlada.</li>
+
+                    <li>Permite conocer qué podría encontrar un atacante real.</li>
+
+                </ul>
+
+            </div>
+
+            <div class="comparison-card" id="grey-box">
+
+                <h3>Grey Box</h3>
+
+                <p>Evaluación con información parcial, como usuarios de prueba, diagramas generales o alcances definidos. Combina velocidad, realismo y profundidad técnica.</p>
+
+                <ul>
+
+                    <li>Útil para aplicaciones con roles de usuario.</li>
+
+                    <li>Permite revisar autenticación, permisos y flujos críticos.</li>
+
+                    <li>Reduce tiempos sin perder contexto de seguridad.</li>
+
+                </ul>
+
+            </div>
+
+            <div class="comparison-card" id="white-box">
+
+                <h3>White Box</h3>
+
+                <p>Prueba con acceso completo a documentación, arquitectura, configuraciones o código fuente para realizar un análisis profundo y orientado a corrección.</p>
+
+                <ul>
+
+                    <li>Recomendado para auditorías internas o preproducción.</li>
+
+                    <li>Facilita encontrar errores lógicos y malas prácticas.</li>
+
+                    <li>Entrega recomendaciones precisas para desarrollo y TI.</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- METODOLOGÍA -->
+
+    <section class="page-hero" id="metodologia">
+
+        <h1>Cómo trabajamos</h1>
+
+        <p>
 
             Seguimos una metodología ordenada para identificar, comprobar,
 
             documentar y corregir riesgos de seguridad.
 
         </p>
-</section>
-<section class="section" id="seccion-metodologia">
-<h2 class="section-title">
+
+    </section>
+
+    <section class="section" id="seccion-metodologia">
+
+        <h2 class="section-title">
 
             Nuestra <span>metodología</span>
-</h2>
-<div class="timeline" id="timeline-metodologia">
-<div class="timeline-item" id="fase-reconocimiento">
-<div class="timeline-number">1</div>
-<div class="timeline-content">
-<h3>Reconocimiento</h3>
-<p>Recolectamos información inicial sobre el objetivo autorizado.</p>
-</div>
-</div>
-<div class="timeline-item" id="fase-escaneo">
-<div class="timeline-number">2</div>
-<div class="timeline-content">
-<h3>Escaneo</h3>
-<p>Identificamos servicios, tecnologías y posibles puntos débiles.</p>
-</div>
-</div>
-<div class="timeline-item" id="fase-explotacion">
-<div class="timeline-number">3</div>
-<div class="timeline-content">
-<h3>Explotación controlada</h3>
-<p>Validamos vulnerabilidades de forma segura y documentada.</p>
-</div>
-</div>
-<div class="timeline-item" id="fase-post-explotacion">
-<div class="timeline-number">4</div>
-<div class="timeline-content">
-<h3>Post-explotación</h3>
-<p>Medimos el posible impacto real de los hallazgos encontrados.</p>
-</div>
-</div>
-<div class="timeline-item" id="fase-reporte">
-<div class="timeline-number">5</div>
-<div class="timeline-content">
-<h3>Reporte</h3>
-<p>Entregamos un informe técnico y ejecutivo con recomendaciones.</p>
-</div>
-</div>
-<div class="timeline-item" id="fase-retest">
-<div class="timeline-number">6</div>
-<div class="timeline-content">
-<h3>Re-test</h3>
-<p>Verificamos que las vulnerabilidades hayan sido corregidas.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- ESTÁNDARES -->
-<section class="section compact-section" id="estandares">
-<h2 class="section-title">
+
+        </h2>
+
+        <div class="timeline" id="timeline-metodologia">
+
+            <div class="timeline-item" id="fase-reconocimiento">
+
+                <div class="timeline-number">1</div>
+
+                <div class="timeline-content">
+
+                    <h3>Reconocimiento</h3>
+
+                    <p>Recolectamos información inicial sobre el objetivo autorizado.</p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item" id="fase-escaneo">
+
+                <div class="timeline-number">2</div>
+
+                <div class="timeline-content">
+
+                    <h3>Escaneo</h3>
+
+                    <p>Identificamos servicios, tecnologías y posibles puntos débiles.</p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item" id="fase-explotacion">
+
+                <div class="timeline-number">3</div>
+
+                <div class="timeline-content">
+
+                    <h3>Explotación controlada</h3>
+
+                    <p>Validamos vulnerabilidades de forma segura y documentada.</p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item" id="fase-post-explotacion">
+
+                <div class="timeline-number">4</div>
+
+                <div class="timeline-content">
+
+                    <h3>Post-explotación</h3>
+
+                    <p>Medimos el posible impacto real de los hallazgos encontrados.</p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item" id="fase-reporte">
+
+                <div class="timeline-number">5</div>
+
+                <div class="timeline-content">
+
+                    <h3>Reporte</h3>
+
+                    <p>Entregamos un informe técnico y ejecutivo con recomendaciones.</p>
+
+                </div>
+
+            </div>
+
+            <div class="timeline-item" id="fase-retest">
+
+                <div class="timeline-number">6</div>
+
+                <div class="timeline-content">
+
+                    <h3>Re-test</h3>
+
+                    <p>Verificamos que las vulnerabilidades hayan sido corregidas.</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ESTÁNDARES -->
+
+    <section class="section compact-section" id="estandares">
+
+        <h2 class="section-title">
 
             Estándares <span>utilizados</span>
-</h2>
-<div class="standards-grid" id="grid-estandares">
-<div class="standard-card" id="estandar-owasp">
-<h3>OWASP</h3>
-<p>Buenas prácticas para seguridad en aplicaciones web.</p>
-</div>
-<div class="standard-card" id="estandar-ptes">
-<h3>PTES</h3>
-<p>Guía para pruebas de penetración profesionales.</p>
-</div>
-<div class="standard-card" id="estandar-nist">
-<h3>NIST</h3>
-<p>Marco de referencia para gestión de riesgos.</p>
-</div>
-</div>
-</section>
-<!-- INFORME -->
-<section class="section compact-section" id="informe">
-<div class="report-box" id="caja-informe">
-<span class="section-label">MUESTRA DE ENTREGABLE</span>
-<h3>Ejemplo de informe</h3>
-<p>
+
+        </h2>
+
+        <div class="standards-grid" id="grid-estandares">
+
+            <div class="standard-card" id="estandar-owasp">
+
+                <h3>OWASP</h3>
+
+                <p>Buenas prácticas para seguridad en aplicaciones web.</p>
+
+            </div>
+
+            <div class="standard-card" id="estandar-ptes">
+
+                <h3>PTES</h3>
+
+                <p>Guía para pruebas de penetración profesionales.</p>
+
+            </div>
+
+            <div class="standard-card" id="estandar-nist">
+
+                <h3>NIST</h3>
+
+                <p>Marco de referencia para gestión de riesgos.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- INFORME -->
+
+    <section class="section compact-section" id="informe">
+
+        <div class="report-box" id="caja-informe">
+
+            <span class="section-label">MUESTRA DE ENTREGABLE</span>
+
+            <h3>Ejemplo de informe</h3>
+
+            <p>
 
                 Revisa una página de muestra con la estructura de reporte que un cliente recibiría al solicitar una auditoría de seguridad.
 
             </p>
-<a class="btn btn-primary" href="informe-ejemplo.html" id="boton-descargar-informe">
+
+            <a href="informe-ejemplo.html" class="btn btn-primary" id="boton-descargar-informe">
 
                 Ver ejemplo de informe
 
             </a>
-</div>
-</section>
-<!-- NOSOTROS -->
-<section class="page-hero corporate-banner" id="nosotros">
-<h1>Sobre AegisProbe</h1>
-<p>
+
+        </div>
+
+    </section>
+
+    <!-- NOSOTROS -->
+
+    <section class="page-hero" id="nosotros">
+
+        <h1>Sobre AegisProbe</h1>
+
+        <p>
 
             Somos un equipo enfocado en ciberseguridad ofensiva,
 
             auditorías y protección de entornos digitales.
 
         </p>
-</section>
-<section class="section compact-section" id="seccion-nosotros">
-<div class="about-grid" id="grid-nosotros">
-<div class="about-text" id="texto-nosotros">
-<h2>Nuestra misión</h2>
-<p>
+
+    </section>
+
+    <section class="section compact-section" id="seccion-nosotros">
+
+        <div class="about-grid" id="grid-nosotros">
+
+            <div class="about-text" id="texto-nosotros">
+
+                <h2>Nuestra misión</h2>
+
+                <p>
 
                     En AegisProbe ayudamos a las organizaciones a descubrir
 
                     sus debilidades antes de que sean aprovechadas por atacantes reales.
 
                 </p>
-<p>
+
+                <p>
 
                     Nuestro trabajo se basa en la ética, la confidencialidad
 
                     y la transparencia durante cada etapa del proceso.
 
                 </p>
-</div>
-<div class="about-visual" id="visual-nosotros"><div aria-label="Imágenes corporativas de Ethical Hacking" aria-roledescription="carrusel" class="mission-carousel" id="carrusel-mision" role="region" tabindex="0">
-<div aria-live="off" class="mission-slides">
-<figure aria-hidden="false" class="mission-slide is-active"><img alt="Pantalla de análisis de vulnerabilidades durante un pentest ético" height="560" loading="lazy" src="img/mision-ethical-hacking.svg" width="900"/><figcaption>Ethical Hacking<span>Pruebas de seguridad autorizadas y controladas</span></figcaption></figure>
-<figure aria-hidden="true" class="mission-slide"><img alt="Estaciones de monitoreo de amenazas de ciberseguridad" height="560" loading="lazy" src="img/mision-soc.svg" width="900"/><figcaption>Monitoreo de amenazas<span>Detección, seguimiento y análisis de riesgos</span></figcaption></figure>
-<figure aria-hidden="true" class="mission-slide"><img alt="Infraestructura de servidores y redes empresariales" height="560" loading="lazy" src="img/mision-infraestructura.svg" width="900"/><figcaption>Seguridad de infraestructura<span>Evaluación de redes, sistemas y servicios</span></figcaption></figure>
-<figure aria-hidden="true" class="mission-slide"><img alt="Equipo de especialistas examinando información de seguridad" height="560" loading="lazy" src="img/mision-equipo.svg" width="900"/><figcaption>Colaboración técnica<span>Resultados útiles para los equipos de TI</span></figcaption></figure>
-</div>
-<button aria-label="Imagen anterior" class="mission-arrow mission-prev" type="button">❮</button>
-<button aria-label="Imagen siguiente" class="mission-arrow mission-next" type="button">❯</button>
-<div aria-label="Seleccionar imagen del carrusel" class="mission-dots">
-<button aria-current="true" aria-label="Mostrar imagen 1 de 4" class="mission-dot is-active" type="button"></button>
-<button aria-label="Mostrar imagen 2 de 4" class="mission-dot" type="button"></button>
-<button aria-label="Mostrar imagen 3 de 4" class="mission-dot" type="button"></button>
-<button aria-label="Mostrar imagen 4 de 4" class="mission-dot" type="button"></button>
-</div>
-</div></div>
-</div>
-</section>
-<!-- VALORES -->
-<section class="section compact-section" id="valores">
-<h2 class="section-title">
+
+            </div>
+
+            <div class="about-visual" id="visual-nosotros">
+                <div class="mission-carousel" id="carrusel-mision" role="region" aria-roledescription="carrusel" aria-label="Imágenes sobre el trabajo de Ethical Hacking de AegisProbe" tabindex="0">
+                    <div class="mission-slides">
+                        <figure class="mission-slide is-active" aria-hidden="false">
+                            <img src="img/mision-ethical-hacking.svg" alt="Estación de análisis de vulnerabilidades y pruebas de seguridad ética" width="900" height="560" loading="eager">
+                            <figcaption>Ethical Hacking <span>Investigación y pruebas autorizadas</span></figcaption>
+                        </figure>
+                        <figure class="mission-slide" aria-hidden="true">
+                            <img src="img/mision-soc.svg" alt="Centro de operaciones de seguridad con analistas monitorizando amenazas" width="900" height="560" loading="lazy">
+                            <figcaption>Monitoreo y análisis <span>Visibilidad continua de los riesgos</span></figcaption>
+                        </figure>
+                        <figure class="mission-slide" aria-hidden="true">
+                            <img src="img/mision-infraestructura.svg" alt="Infraestructura corporativa y servidores bajo evaluación de seguridad" width="900" height="560" loading="lazy">
+                            <figcaption>Infraestructura protegida <span>Seguridad en redes y servidores</span></figcaption>
+                        </figure>
+                        <figure class="mission-slide" aria-hidden="true">
+                            <img src="img/mision-equipo.svg" alt="Equipo técnico revisando resultados de seguridad en pantallas corporativas" width="900" height="560" loading="lazy">
+                            <figcaption>Trabajo en equipo <span>Hallazgos claros y recomendaciones</span></figcaption>
+                        </figure>
+                    </div>
+                    <button class="mission-arrow mission-prev" type="button" aria-label="Imagen anterior">&#10094;</button>
+                    <button class="mission-arrow mission-next" type="button" aria-label="Imagen siguiente">&#10095;</button>
+                    <div class="mission-dots" aria-label="Seleccionar imagen del carrusel">
+                        <button type="button" class="mission-dot is-active" aria-label="Imagen 1 de 4" aria-current="true"></button>
+                        <button type="button" class="mission-dot" aria-label="Imagen 2 de 4"></button>
+                        <button type="button" class="mission-dot" aria-label="Imagen 3 de 4"></button>
+                        <button type="button" class="mission-dot" aria-label="Imagen 4 de 4"></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- VALORES -->
+
+    <section class="section compact-section" id="valores">
+
+        <h2 class="section-title">
 
             Nuestros <span>valores</span>
-</h2>
-<div class="values-grid" id="grid-valores">
-<div class="value-card" id="valor-confidencialidad">
-<h3>Confidencialidad</h3>
-<p>Protegemos la información de cada cliente con responsabilidad.</p>
-</div>
-<div class="value-card" id="valor-etica">
-<h3>Ética</h3>
-<p>Trabajamos únicamente bajo autorización y alcance definido.</p>
-</div>
-<div class="value-card" id="valor-transparencia">
-<h3>Transparencia</h3>
-<p>Explicamos los hallazgos de forma clara y entendible.</p>
-</div>
-</div>
-</section>
-<!-- EQUIPO -->
+
+        </h2>
+
+        <div class="values-grid" id="grid-valores">
+
+            <div class="value-card" id="valor-confidencialidad">
+
+                <h3>Confidencialidad</h3>
+
+                <p>Protegemos la información de cada cliente con responsabilidad.</p>
+
+            </div>
+
+            <div class="value-card" id="valor-etica">
+
+                <h3>Ética</h3>
+
+                <p>Trabajamos únicamente bajo autorización y alcance definido.</p>
+
+            </div>
+
+            <div class="value-card" id="valor-transparencia">
+
+                <h3>Transparencia</h3>
+
+                <p>Explicamos los hallazgos de forma clara y entendible.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EQUIPO -->
+
 <section class="section compact-section" id="equipo">
-<h2 class="section-title">
+
+    <h2 class="section-title">
 
         Nuestro <span>equipo</span>
-</h2>
-<div class="team-grid" id="grid-equipo">
-<div class="team-card" id="miembro-red-team">
-<img alt="Foto del Analista Red Team" class="team-photo" src="img/equipo-1.png"/>
-<h3>Analista Red Team</h3>
-<p>Especialista en pruebas ofensivas, explotación controlada y simulación de ataques.</p>
-<span class="team-badge">OSCP · CEH</span>
-</div>
-<div class="team-card" id="miembro-web">
-<img alt="Foto del Especialista Web" class="team-photo" src="img/equipo-2.png"/>
-<h3>Especialista Web</h3>
-<p>Encargado de evaluar aplicaciones web, APIs y vulnerabilidades OWASP.</p>
-<span class="team-badge">OWASP · Pentesting</span>
-</div>
-<div class="team-card" id="miembro-riesgos">
-<img alt="Foto del Consultor de Riesgos" class="team-photo" src="img/equipo-3.png"/>
-<h3>Consultor de Riesgos</h3>
-<p>Responsable del análisis de impacto, cumplimiento y recomendaciones de seguridad.</p>
-<span class="team-badge">ISO 27001 · NIST</span>
-</div>
-</div>
+
+    </h2>
+
+    <div class="team-grid" id="grid-equipo">
+
+        <div class="team-card" id="miembro-red-team">
+
+            <img
+
+                src="img/equipo-1.png"
+
+                alt="Foto del Analista Red Team"
+
+                class="team-photo"
+
+            >
+
+            <h3>Analista Red Team</h3>
+
+            <p>Especialista en pruebas ofensivas, explotación controlada y simulación de ataques.</p>
+
+            <span class="team-badge">OSCP · CEH</span>
+
+        </div>
+
+        <div class="team-card" id="miembro-web">
+
+            <img
+
+                src="img/equipo-2.png"
+
+                alt="Foto del Especialista Web"
+
+                class="team-photo"
+
+            >
+
+            <h3>Especialista Web</h3>
+
+            <p>Encargado de evaluar aplicaciones web, APIs y vulnerabilidades OWASP.</p>
+
+            <span class="team-badge">OWASP · Pentesting</span>
+
+        </div>
+
+        <div class="team-card" id="miembro-riesgos">
+
+            <img
+
+                src="img/equipo-3.png"
+
+                alt="Foto del Consultor de Riesgos"
+
+                class="team-photo"
+
+            >
+
+            <h3>Consultor de Riesgos</h3>
+
+            <p>Responsable del análisis de impacto, cumplimiento y recomendaciones de seguridad.</p>
+
+            <span class="team-badge">ISO 27001 · NIST</span>
+
+        </div>
+
+    </div>
+
 </section>
-<!-- CERTIFICACIONES -->
-<section class="section compact-section" id="certificaciones">
-<h2 class="section-title">
+
+    <!-- CERTIFICACIONES -->
+
+    <section class="section compact-section" id="certificaciones">
+
+        <h2 class="section-title">
 
             Certificaciones y <span>alianzas</span>
-</h2>
-<p class="section-description">
+
+        </h2>
+
+        <p class="section-description">
 
             Accede a páginas oficiales relacionadas con certificaciones, normas y comunidades de seguridad usadas como referencia profesional.
 
         </p>
-<div class="certifications" id="lista-certificaciones">
-<a aria-label="Abrir página oficial de OSCP en OffSec" class="cert-badge" href="https://www.offsec.com/courses/pen-200/" rel="noopener noreferrer" target="_blank">OSCP</a>
-<a aria-label="Abrir página oficial de CEH en EC-Council" class="cert-badge" href="https://www.eccouncil.org/train-certify/certified-ethical-hacker-ceh/" rel="noopener noreferrer" target="_blank">CEH</a>
-<a aria-label="Abrir página oficial de ISO IEC 27001" class="cert-badge" href="https://www.iso.org/standard/27001" rel="noopener noreferrer" target="_blank">ISO 27001</a>
-<a aria-label="Abrir sitio oficial de OWASP" class="cert-badge" href="https://owasp.org/" rel="noopener noreferrer" target="_blank">OWASP</a>
-</div>
-</section>
-<!-- CONTACTO -->
-<section class="page-hero corporate-banner" id="contacto">
-<h1>Contacto</h1>
-<p>
+
+        <div class="certifications" id="lista-certificaciones">
+
+            <a class="cert-badge" href="https://www.offsec.com/courses/pen-200/" target="_blank" rel="noopener noreferrer" aria-label="Abrir página oficial de OSCP en OffSec">OSCP</a>
+
+            <a class="cert-badge" href="https://www.eccouncil.org/train-certify/certified-ethical-hacker-ceh/" target="_blank" rel="noopener noreferrer" aria-label="Abrir página oficial de CEH en EC-Council">CEH</a>
+
+            <a class="cert-badge" href="https://www.iso.org/standard/27001" target="_blank" rel="noopener noreferrer" aria-label="Abrir página oficial de ISO IEC 27001">ISO 27001</a>
+
+            <a class="cert-badge" href="https://owasp.org/" target="_blank" rel="noopener noreferrer" aria-label="Abrir sitio oficial de OWASP">OWASP</a>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACTO -->
+
+    <section class="page-hero" id="contacto">
+
+        <h1>Contacto</h1>
+
+        <p>
 
             Comunícate con AegisProbe para consultas generales,
 
             dudas sobre servicios o solicitudes empresariales.
 
         </p>
-</section>
-<section class="section" id="seccion-contacto">
-<div class="contact-grid" id="grid-contacto">
-<div class="contact-card" id="datos-contacto">
-<h3>Datos de contacto</h3>
-<p><strong>Correo:</strong> contacto@aegisprobe.com</p>
-<p><strong>Teléfono:</strong> +51 999 999 999</p>
-<p><strong>Horario:</strong> Lunes a viernes, 9:00 a.m. - 6:00 p.m.</p>
-<p><strong>Ubicación:</strong> Lima, Perú</p>
-</div>
-<div class="contact-card" id="aviso-confidencialidad">
-<h3>Confidencialidad</h3>
-<p>
+
+    </section>
+
+    <section class="section" id="seccion-contacto">
+
+        <div class="contact-grid" id="grid-contacto">
+
+            <div class="contact-card" id="datos-contacto">
+
+                <h3>Datos de contacto</h3>
+
+                <p><strong>Correo:</strong> contacto@aegisprobe.com</p>
+
+                <p><strong>Teléfono:</strong> +51 999 999 999</p>
+
+                <p><strong>Horario:</strong> Lunes a viernes, 9:00 a.m. - 6:00 p.m.</p>
+
+                <p><strong>Ubicación:</strong> Lima, Perú</p>
+
+            </div>
+
+            <div class="contact-card" id="aviso-confidencialidad">
+
+                <h3>Confidencialidad</h3>
+
+                <p>
 
                     Toda información enviada a AegisProbe será tratada
 
@@ -619,37 +1146,50 @@
                     la solicitud del cliente.
 
                 </p>
-<p>
+
+                <p>
 
                     También podemos trabajar bajo acuerdos NDA cuando
 
                     el proyecto lo requiera.
 
                 </p>
-<a class="btn btn-primary" href="#solicitar-auditoria">
+
+                <a href="#solicitar-auditoria" class="btn btn-primary">
 
                     Solicitar auditoría
 
                 </a>
-</div>
-</div>
-</section>
-<!-- SOLICITAR AUDITORÍA -->
-<section class="contact-section" id="solicitar-auditoria">
-<!-- INFORMACIÓN IZQUIERDA -->
-<section class="contact-info" id="informacion-auditoria">
-<span class="section-label" id="etiqueta-seguridad">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SOLICITAR AUDITORÍA -->
+
+    <section class="contact-section" id="solicitar-auditoria">
+
+        <!-- INFORMACIÓN IZQUIERDA -->
+
+        <section class="contact-info" id="informacion-auditoria">
+
+            <span class="section-label" id="etiqueta-seguridad">
 
                 HABLEMOS SOBRE TU SEGURIDAD
 
             </span>
-<h1 id="titulo-principal">
+
+            <h1 id="titulo-principal">
 
                 Solicita una
 
                 <span>auditoría</span>
-</h1>
-<p id="descripcion-principal">
+
+            </h1>
+
+            <p id="descripcion-principal">
 
                 Cuéntanos sobre tu empresa y las necesidades de seguridad
 
@@ -658,264 +1198,500 @@
                 tu solicitud y se pondrá en contacto contigo.
 
             </p>
-<div class="info-card" id="tarjeta-evaluacion">
-<div class="info-icon" id="icono-evaluacion">✓</div>
-<div>
-<h3>Evaluación especializada</h3>
-<p>
+
+            <div class="info-card" id="tarjeta-evaluacion">
+
+                <div class="info-icon" id="icono-evaluacion">✓</div>
+
+                <div>
+
+                    <h3>Evaluación especializada</h3>
+
+                    <p>
 
                         Analizamos tus necesidades para recomendarte
 
                         el servicio más adecuado.
 
                     </p>
-</div>
-</div>
-<div class="info-card" id="tarjeta-confidencialidad">
-<div class="info-icon" id="icono-confidencialidad">🔒</div>
-<div>
-<h3>Información confidencial</h3>
-<p>
+
+                </div>
+
+            </div>
+
+            <div class="info-card" id="tarjeta-confidencialidad">
+
+                <div class="info-icon" id="icono-confidencialidad">🔒</div>
+
+                <div>
+
+                    <h3>Información confidencial</h3>
+
+                    <p>
 
                         Los datos proporcionados serán tratados
 
                         de manera segura y confidencial.
 
                     </p>
-</div>
-</div>
-<div class="info-card" id="tarjeta-respuesta">
-<div class="info-icon" id="icono-respuesta">⚡</div>
-<div>
-<h3>Respuesta rápida</h3>
-<p>
+
+                </div>
+
+            </div>
+
+            <div class="info-card" id="tarjeta-respuesta">
+
+                <div class="info-icon" id="icono-respuesta">⚡</div>
+
+                <div>
+
+                    <h3>Respuesta rápida</h3>
+
+                    <p>
 
                         Nuestro equipo revisará tu solicitud
 
                         a la brevedad.
 
                     </p>
-</div>
-</div>
-</section>
-<!-- FORMULARIO -->
-<section class="form-container" id="contenedor-formulario">
-<div class="form-header" id="encabezado-formulario">
-<h2>Solicitar auditoría</h2>
-<p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- FORMULARIO -->
+
+        <section class="form-container" id="contenedor-formulario">
+
+            <div class="form-header" id="encabezado-formulario">
+
+                <h2>Solicitar auditoría</h2>
+
+                <p>
 
                     Completa tus datos para comenzar.
 
                 </p>
-</div>
-<form action="#" id="formulario-auditoria" method="post">
-<!-- NOMBRES Y APELLIDOS -->
-<div class="form-row" id="fila-nombre-apellido">
-<div class="form-group" id="grupo-nombre">
-<label for="nombre">
+
+            </div>
+
+            <form id="formulario-auditoria" action="#" method="post">
+
+                <!-- NOMBRES Y APELLIDOS -->
+
+                <div class="form-row" id="fila-nombre-apellido">
+
+                    <div class="form-group" id="grupo-nombre">
+
+                        <label for="nombre">
 
                             Nombres <span>*</span>
-</label>
-<input id="nombre" name="nombre" placeholder="Ingresa tus nombres" required="" type="text"/>
-</div>
-<div class="form-group" id="grupo-apellido">
-<label for="apellido">
+
+                        </label>
+
+                        <input
+
+                            type="text"
+
+                            id="nombre"
+
+                            name="nombre"
+
+                            placeholder="Ingresa tus nombres"
+
+                            required
+
+                        >
+
+                    </div>
+
+                    <div class="form-group" id="grupo-apellido">
+
+                        <label for="apellido">
 
                             Apellidos <span>*</span>
-</label>
-<input id="apellido" name="apellido" placeholder="Ingresa tus apellidos" required="" type="text"/>
-</div>
-</div>
-<!-- EMPRESA Y CORREO -->
-<div class="form-row" id="fila-empresa-correo">
-<div class="form-group" id="grupo-empresa">
-<label for="empresa">
+
+                        </label>
+
+                        <input
+
+                            type="text"
+
+                            id="apellido"
+
+                            name="apellido"
+
+                            placeholder="Ingresa tus apellidos"
+
+                            required
+
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- EMPRESA Y CORREO -->
+
+                <div class="form-row" id="fila-empresa-correo">
+
+                    <div class="form-group" id="grupo-empresa">
+
+                        <label for="empresa">
 
                             Empresa
 
                         </label>
-<input id="empresa" name="empresa" placeholder="Nombre de tu empresa" type="text"/>
-</div>
-<div class="form-group" id="grupo-correo">
-<label for="correo">
+
+                        <input
+
+                            type="text"
+
+                            id="empresa"
+
+                            name="empresa"
+
+                            placeholder="Nombre de tu empresa"
+
+                        >
+
+                    </div>
+
+                    <div class="form-group" id="grupo-correo">
+
+                        <label for="correo">
 
                             Correo electrónico <span>*</span>
-</label>
-<input id="correo" name="correo" placeholder="correo@empresa.com" required="" type="email"/>
-</div>
-</div>
-<!-- TELÉFONO -->
-<div class="form-group" id="grupo-telefono">
-<label for="telefono">
+
+                        </label>
+
+                        <input
+
+                            type="email"
+
+                            id="correo"
+
+                            name="correo"
+
+                            placeholder="correo@empresa.com"
+
+                            required
+
+                        >
+
+                    </div>
+
+                </div>
+
+                <!-- TELÉFONO -->
+
+                <div class="form-group" id="grupo-telefono">
+
+                    <label for="telefono">
 
                         Teléfono
 
                     </label>
-<input id="telefono" name="telefono" placeholder="+51 999 999 999" type="tel"/>
-</div>
-<!-- SERVICIO -->
-<div class="form-group" id="grupo-servicio">
-<label for="servicio">
+
+                    <input
+
+                        type="tel"
+
+                        id="telefono"
+
+                        name="telefono"
+
+                        placeholder="+51 999 999 999"
+
+                    >
+
+                </div>
+
+                <!-- SERVICIO -->
+
+                <div class="form-group" id="grupo-servicio">
+
+                    <label for="servicio">
 
                         Servicio solicitado <span>*</span>
-</label>
-<select id="servicio" name="servicio" required="">
-<option value="">
+
+                    </label>
+
+                    <select id="servicio" name="servicio" required>
+
+                        <option value="">
 
                             Selecciona un servicio
 
                         </option>
-<option value="pentesting-web">
+
+                        <option value="pentesting-web">
 
                             Pentesting Web
 
                         </option>
-<option value="pentesting-movil">
+
+                        <option value="pentesting-movil">
 
                             Pentesting Móvil
 
                         </option>
-<option value="infraestructura">
+
+                        <option value="infraestructura">
 
                             Infraestructura y Red
 
                         </option>
-<option value="red-team">
+
+                        <option value="red-team">
 
                             Red Team
 
                         </option>
-<option value="auditoria">
+
+                        <option value="auditoria">
 
                             Auditoría de Seguridad
 
                         </option>
-<option value="ingenieria-social">
+
+                        <option value="ingenieria-social">
 
                             Ingeniería Social
 
                         </option>
-</select>
-</div>
-<!-- ALCANCE -->
-<div class="form-group" id="grupo-alcance">
-<label>
+
+                    </select>
+
+                </div>
+
+                <!-- ALCANCE -->
+
+                <div class="form-group" id="grupo-alcance">
+
+                    <label>
 
                         Alcance de la auditoría
 
                     </label>
-<div class="checkbox-container" id="opciones-alcance">
-<label class="check-option" id="alcance-web">
-<input name="alcance" type="checkbox" value="web"/>
-<span>Web / Aplicación</span>
-</label>
-<label class="check-option" id="alcance-red">
-<input name="alcance" type="checkbox" value="red"/>
-<span>Red / Infraestructura</span>
-</label>
-<label class="check-option" id="alcance-movil">
-<input name="alcance" type="checkbox" value="movil"/>
-<span>Aplicación móvil</span>
-</label>
-<label class="check-option" id="alcance-servidores">
-<input name="alcance" type="checkbox" value="servidores"/>
-<span>Servidores</span>
-</label>
-</div>
-</div>
-<!-- URGENCIA -->
-<div class="form-group" id="grupo-urgencia">
-<label>
+
+                    <div class="checkbox-container" id="opciones-alcance">
+
+                        <label class="check-option" id="alcance-web">
+
+                            <input type="checkbox" name="alcance" value="web">
+
+                            <span>Web / Aplicación</span>
+
+                        </label>
+
+                        <label class="check-option" id="alcance-red">
+
+                            <input type="checkbox" name="alcance" value="red">
+
+                            <span>Red / Infraestructura</span>
+
+                        </label>
+
+                        <label class="check-option" id="alcance-movil">
+
+                            <input type="checkbox" name="alcance" value="movil">
+
+                            <span>Aplicación móvil</span>
+
+                        </label>
+
+                        <label class="check-option" id="alcance-servidores">
+
+                            <input type="checkbox" name="alcance" value="servidores">
+
+                            <span>Servidores</span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- URGENCIA -->
+
+                <div class="form-group" id="grupo-urgencia">
+
+                    <label>
 
                         Nivel de urgencia
 
                     </label>
-<div class="radio-container" id="opciones-urgencia">
-<label class="radio-option" id="urgencia-normal">
-<input checked="" name="urgencia" type="radio" value="normal"/>
-<span>Normal</span>
-</label>
-<label class="radio-option" id="urgencia-alta">
-<input name="urgencia" type="radio" value="alta"/>
-<span>Alta</span>
-</label>
-<label class="radio-option" id="urgencia-critica">
-<input name="urgencia" type="radio" value="critica"/>
-<span>Crítica</span>
-</label>
-</div>
-</div>
-<!-- MENSAJE -->
-<div class="form-group" id="grupo-mensaje">
-<label for="mensaje">
+
+                    <div class="radio-container" id="opciones-urgencia">
+
+                        <label class="radio-option" id="urgencia-normal">
+
+                            <input type="radio" name="urgencia" value="normal" checked>
+
+                            <span>Normal</span>
+
+                        </label>
+
+                        <label class="radio-option" id="urgencia-alta">
+
+                            <input type="radio" name="urgencia" value="alta">
+
+                            <span>Alta</span>
+
+                        </label>
+
+                        <label class="radio-option" id="urgencia-critica">
+
+                            <input type="radio" name="urgencia" value="critica">
+
+                            <span>Crítica</span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- MENSAJE -->
+
+                <div class="form-group" id="grupo-mensaje">
+
+                    <label for="mensaje">
 
                         Descripción del proyecto <span>*</span>
-</label>
-<textarea id="mensaje" name="mensaje" placeholder="Cuéntanos brevemente qué necesitas evaluar..." required="" rows="5"></textarea>
-</div>
-<!-- PRIVACIDAD -->
-<label class="privacy" id="grupo-privacidad">
-<input id="privacidad" name="privacidad" required="" type="checkbox"/>
-<span>
+
+                    </label>
+
+                    <textarea
+
+                        id="mensaje"
+
+                        name="mensaje"
+
+                        rows="5"
+
+                        placeholder="Cuéntanos brevemente qué necesitas evaluar..."
+
+                        required
+
+                    ></textarea>
+
+                </div>
+
+                <!-- PRIVACIDAD -->
+
+                <label class="privacy" id="grupo-privacidad">
+
+                    <input
+
+                        type="checkbox"
+
+                        id="privacidad"
+
+                        name="privacidad"
+
+                        required
+
+                    >
+
+                    <span>
 
                         Acepto el tratamiento de mis datos y
 
                         la política de privacidad.
 
                     </span>
-</label>
-<!-- BOTÓN -->
-<button class="submit-btn" id="boton-enviar-auditoria" type="submit">
+
+                </label>
+
+                <!-- BOTÓN -->
+
+                <button type="submit" class="submit-btn" id="boton-enviar-auditoria">
 
                     Solicitar auditoría
 
                     <span>→</span>
-</button>
-</form>
-</section>
-</section>
-<!-- CONFIRMACIÓN -->
-<section class="confirmacion-section" id="confirmacion" style="display: none;">
-<div class="confirmacion-card" id="tarjeta-confirmacion">
-<div class="confirmacion-icon" id="icono-confirmacion">
+
+                </button>
+
+            </form>
+            <p id="mensaje-auditoria" class="usuarios-feedback" role="status" aria-live="polite" tabindex="-1" hidden></p>
+
+        </section>
+
+    </section>
+
+    <!-- CONFIRMACIÓN -->
+
+    <section class="confirmacion-section" id="confirmacion" style="display: none;">
+
+        <div class="confirmacion-card" id="tarjeta-confirmacion">
+
+            <div class="confirmacion-icon" id="icono-confirmacion">
 
                 ✓
 
             </div>
-<h1>Solicitud recibida con éxito</h1>
-<p>
+
+            <h1>Solicitud recibida con éxito</h1>
+
+            <p>
 
                 Gracias por contactar con AegisProbe.
 
                 Hemos recibido tu solicitud de auditoría correctamente.
 
             </p>
-<p>
-<strong>No nos llames, nosotros te llamaremos.</strong>
-</p>
-<a class="btn btn-primary" href="#inicio" id="boton-volver-inicio">
+
+            <p>
+
+                <strong>No nos llames, nosotros te llamaremos.</strong>
+
+            </p>
+
+            <a href="#inicio" class="btn btn-primary" id="boton-volver-inicio">
 
                 Volver al inicio
 
             </a>
-</div>
-</section>
-<!-- FOOTER -->
-<footer id="pie-pagina">
-<div class="footer-brand" id="marca-footer">
-<img alt="" class="footer-logo" decoding="async" height="40" id="logo-footer" src="img/aegisprobe-logo.png" width="40"></img>
-<strong>
-<span>Aegis</span>Probe
+
+        </div>
+
+    </section>
+
+     <!-- FOOTER -->
+
+     <footer id="pie-pagina">
+
+        <div class="footer-brand" id="marca-footer">
+
+            <div class="footer-logo" id="logo-footer"></div>
+
+            <strong>
+
+                <span>Aegis</span>Probe
 
             </strong>
-</div>
-<p id="texto-footer">
 
-            © 2026 AegisProbe · Pentesting &amp; Offensive Security
+        </div>
+
+        <p id="texto-footer">
+
+            © 2026 AegisProbe · Pentesting & Offensive Security
 
         </p>
-</footer>
-<!-- JAVASCRIPT -->
-<script defer="" src="index.js"></script>
+
+    </footer>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="index.js" defer></script>
+    <script type="module" src="auditorias.js"></script>
+    <script type="module" src="navegacion-sesion.js"></script>
+
 </body>
+
 </html>

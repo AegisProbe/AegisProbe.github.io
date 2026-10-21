@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071A33">
+  <meta name="description" content="Panel personal de AegisProbe: consulta tu perfil y el estado de tus solicitudes de auditoría.">
+  <title>Mi cuenta | AegisProbe</title>
+  <link rel="stylesheet" href="css/estilo-formulario.css">
+  <link rel="stylesheet" href="css/usuarios.css">
+  <link rel="stylesheet" href="css/mi-cuenta.css">
+  <script type="module" src="mi-cuenta.js"></script>
+  <script type="module" src="navegacion-sesion.js"></script>
+</head>
+<body id="pagina-cuenta">
+  <header class="header" id="cabecera">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="AegisProbe, volver al inicio">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <span class="brand-name"><span class="aegis">Aegis</span><span class="probe">Probe</span></span>
+      </a>
+      <nav class="nav" id="menu-navegacion" aria-label="Navegación principal">
+        <a href="index.html" id="link-inicio">Inicio</a>
+        <a href="index.html#servicios" id="link-servicios">Servicios</a>
+        <a href="index.html#metodologia" id="link-metodologia">Metodología</a>
+        <a href="index.html#nosotros" id="link-nosotros">Nosotros</a>
+        <a href="index.html#contacto" id="link-contacto">Contacto</a>
+        <a href="index.html#solicitar-auditoria" id="link-solicitar-auditoria">Solicitar auditoría</a>
+        <a href="mi-cuenta.html" id="link-login" aria-current="page">Mi cuenta</a>
+        <a href="registro.html" id="link-registro">Cerrar sesión</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="cuenta-main" id="contenido-principal">
+    <section class="cuenta-hero" aria-labelledby="cuenta-titulo">
+      <div class="cuenta-hero-contenido">
+        <span class="cuenta-eyebrow"><span class="cuenta-eyebrow-punto" aria-hidden="true"></span> ÁREA PRIVADA · AEGISPROBE</span>
+        <h1 id="cuenta-titulo">Tu seguridad, <span>bajo control.</span></h1>
+        <p id="cuenta-saludo">Bienvenido a tu espacio personal. Revisa tus datos y conoce el avance de tus solicitudes.</p>
+        <div class="cuenta-hero-acciones">
+          <a href="index.html#solicitar-auditoria" class="cuenta-boton cuenta-boton-primario">+ Nueva auditoría <span aria-hidden="true">↗</span></a>
+          <a href="#mis-solicitudes" class="cuenta-boton cuenta-boton-contorno">Ver mis solicitudes <span aria-hidden="true">↓</span></a>
+        </div>
+      </div>
+      <div class="cuenta-hero-marca" aria-hidden="true">
+        <div class="cuenta-hero-anillo cuenta-hero-anillo-uno"></div>
+        <div class="cuenta-hero-anillo cuenta-hero-anillo-dos"></div>
+        <div class="cuenta-hero-emblema"><img src="img/aegisprobe-logo.png" alt="" width="136" height="136"></div>
+        <span class="cuenta-hero-marca-texto">SEGURIDAD OFENSIVA</span>
+      </div>
+    </section>
+
+    <section class="cuenta-invitado" id="cuenta-invitado" hidden aria-labelledby="cuenta-invitado-titulo">
+      <div class="cuenta-invitado-icono" aria-hidden="true">🔒</div>
+      <div>
+        <h2 id="cuenta-invitado-titulo">Accede a tu espacio personal</h2>
+        <p id="cuenta-invitado-texto">Inicia sesión con tu cuenta verificada para consultar los datos de tu perfil y tus solicitudes de auditoría.</p>
+      </div>
+      <a class="cuenta-boton cuenta-boton-primario" href="login.html">Iniciar sesión <span aria-hidden="true">→</span></a>
+    </section>
+
+    <div id="cuenta-paneles" class="cuenta-paneles" hidden>
+      <section class="cuenta-kpis" aria-label="Resumen de mis auditorías">
+        <article class="cuenta-kpi">
+          <div class="cuenta-kpi-icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M8 2v4M16 2v4M3 10h18M8 15h3M8 18h7"/></svg></div>
+          <div class="cuenta-kpi-detalle"><strong id="cuenta-total">—</strong><span>Solicitudes totales</span><small>Historial de auditorías</small></div>
+        </article>
+        <article class="cuenta-kpi">
+          <div class="cuenta-kpi-icono cuenta-kpi-icono-ambar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+          <div class="cuenta-kpi-detalle"><strong id="cuenta-pendientes">—</strong><span>En seguimiento</span><small>Pendientes o en revisión</small></div>
+        </article>
+        <article class="cuenta-kpi">
+          <div class="cuenta-kpi-icono cuenta-kpi-icono-verde" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg></div>
+          <div class="cuenta-kpi-detalle"><strong id="cuenta-finalizadas">—</strong><span>Finalizadas</span><small>Solicitudes cerradas</small></div>
+        </article>
+      </section>
+
+      <div class="cuenta-columnas">
+        <aside class="cuenta-lateral" aria-label="Datos personales y seguridad">
+          <section class="cuenta-panel cuenta-perfil" aria-labelledby="perfil-titulo">
+            <div class="cuenta-panel-encabezado"><span class="cuenta-panel-etiqueta">TU PERFIL</span><h2 id="perfil-titulo">Datos personales</h2><p>La información asociada a tu cuenta.</p></div>
+            <div class="cuenta-perfil-identidad">
+              <div class="cuenta-avatar" id="cuenta-iniciales" aria-hidden="true">AP</div>
+              <div class="cuenta-identidad-texto"><strong id="cuenta-nombre">Cargando…</strong><span id="cuenta-correo">—</span></div>
+            </div>
+            <dl class="cuenta-detalles">
+              <div><dt>Estado de la cuenta</dt><dd><span id="cuenta-verificacion" class="cuenta-estado-cuenta">Comprobando…</span></dd></div>
+              <div><dt>Protección</dt><dd>Acceso gestionado con Supabase Auth</dd></div>
+            </dl>
+            <a href="index.html#contacto" class="cuenta-enlace-suave">¿Necesitas actualizar tus datos? <span aria-hidden="true">↗</span></a>
+          </section>
+          <section class="cuenta-panel cuenta-seguridad" aria-labelledby="seguridad-titulo">
+            <div class="cuenta-seguridad-icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+            <h2 id="seguridad-titulo">Tu información es privada</h2>
+            <p>Las solicitudes de tu cuenta están protegidas por las políticas de acceso de Supabase. No compartas tus credenciales.</p>
+            <a href="index.html#contacto">Conoce nuestros canales de contacto <span aria-hidden="true">↗</span></a>
+          </section>
+        </aside>
+
+        <section class="cuenta-panel cuenta-historial" id="mis-solicitudes" aria-labelledby="solicitudes-titulo">
+          <div class="cuenta-historial-encabezado">
+            <div><span class="cuenta-panel-etiqueta">SEGUIMIENTO</span><h2 id="solicitudes-titulo">Mis solicitudes de auditoría</h2><p>Consulta tus solicitudes enviadas y su estado actual.</p></div>
+            <button class="cuenta-actualizar" type="button" id="cuenta-actualizar" aria-label="Actualizar solicitudes"><span aria-hidden="true">↻</span> Actualizar</button>
+          </div>
+          <div class="cuenta-herramientas">
+            <label for="cuenta-filtro">Filtrar por estado</label>
+            <select id="cuenta-filtro" class="cuenta-filtro">
+              <option value="todos">Todos los estados</option>
+              <option value="pendiente">Pendiente</option>
+              <option value="en_revision">En revisión</option>
+              <option value="contactado">Contactado</option>
+              <option value="cerrado">Cerrado</option>
+            </select>
+          </div>
+          <p id="cuenta-estado" role="status" class="cuenta-estado" aria-live="polite">Cargando información…</p>
+          <div class="cuenta-vacio" id="cuenta-vacio" hidden>
+            <div class="cuenta-vacio-icono" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+            <h3 id="cuenta-vacio-titulo">Aún no tienes solicitudes</h3>
+            <p id="cuenta-vacio-texto">Cuando solicites una auditoría, aparecerá aquí para que puedas seguir su estado.</p>
+            <a href="index.html#solicitar-auditoria" class="cuenta-boton cuenta-boton-primario" id="cuenta-vacio-accion">Solicitar auditoría <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="cuenta-tabla-contenedor" id="cuenta-tabla-contenedor" hidden>
+            <table class="cuenta-tabla">
+              <thead><tr><th scope="col">Fecha</th><th scope="col">Servicio</th><th scope="col">Urgencia</th><th scope="col">Estado</th></tr></thead>
+              <tbody id="cuenta-solicitudes"></tbody>
+            </table>
+          </div>
+          <div class="cuenta-historial-pie"><span>Solo tú puedes consultar las solicitudes vinculadas a tu cuenta.</span><a href="index.html#solicitar-auditoria">Nueva solicitud <span aria-hidden="true">→</span></a></div>
+        </section>
+      </div>
+
+      <section class="cuenta-recursos" aria-labelledby="recursos-titulo">
+        <div class="cuenta-recursos-encabezado"><span class="cuenta-panel-etiqueta">TE ACOMPAÑAMOS</span><h2 id="recursos-titulo">¿Qué necesitas hacer ahora?</h2><p>Accesos rápidos a las secciones que más puedes necesitar.</p></div>
+        <div class="cuenta-recursos-grid">
+          <a class="cuenta-recurso" href="index.html#solicitar-auditoria"><span class="cuenta-recurso-icono" aria-hidden="true">↗</span><strong>Solicitar una evaluación</strong><span>Cuéntanos qué deseas proteger y solicita una nueva auditoría.</span><span class="cuenta-recurso-ver">Ir al formulario →</span></a>
+          <a class="cuenta-recurso" href="informe-ejemplo.html"><span class="cuenta-recurso-icono" aria-hidden="true">▤</span><strong>Ver informe de ejemplo</strong><span>Conoce cómo presentamos hallazgos, impacto y recomendaciones.</span><span class="cuenta-recurso-ver">Explorar informe →</span></a>
+          <a class="cuenta-recurso" href="index.html#contacto"><span class="cuenta-recurso-icono" aria-hidden="true">✉</span><strong>Hablar con AegisProbe</strong><span>Contacta al equipo para recibir orientación sobre tu solicitud.</span><span class="cuenta-recurso-ver">Ir a contacto →</span></a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer id="pie-pagina">
+    <div class="footer-brand" id="marca-footer"><div class="footer-logo" aria-hidden="true"></div><strong><span>Aegis</span>Probe</strong></div>
+    <p id="texto-footer">© 2026 AegisProbe · Pentesting &amp; Offensive Security</p>
+  </footer>
+</body>
+</html>
